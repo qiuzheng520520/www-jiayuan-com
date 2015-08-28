@@ -237,6 +237,7 @@ int do_things(int rfd)
 		qz_printf("e==%d\n",e-html_buff);
 		qz_printf("p==%d\n",p-html_buff);
 		qz_printf("str_len==%d\n",str_len);
+		qz_printf("f_str_len==%d\n",strlen(req_args[i].f_str));
 
 		sprintf(seg_buf,"%10s\t",var_buf);
 		strcat(res_buff,seg_buf);
