@@ -1,20 +1,26 @@
 CC=gcc
-#INC=/home/qz/test/www-jiayuan-com/db/include
-#LIB=/home/qz/test/www-jiayuan-com/db/lib
-#lib=sqlite3
-#CFLAGS=-I$(INC) -L$(LIB) -l$(lib)
+#INC=/var/lib/openshift/543dd9894382ec666100002d/app-root/runtime/data/current/test/db/include/
+#LIB=/var/lib/openshift/543dd9894382ec666100002d/app-root/runtime/data/current/test/db/lib/
+INC=/home/qz/test/www-jiayuan-com/db/include/
+LIB=/home/qz/test/www-jiayuan-com/db/lib/
+lib=sqlite3
+CFLAGS=-I$(INC) -L$(LIB) -l$(lib)
 
-target=connect
+all:db_test
 
-all:$(target)
+src := $(shell ls *.c)
+objs := $(patsubst %.c,%.o,$(src))
 
-client:connect.c
-	#$(CC)  $(CFLAGS) $^ -o $@
-	$(CC)  -lsqlite3 $^ -o $@
+
+db_test: $(objs)
+	$(CC) -o $@ $^ $(CFLAGS) 
+
+
+%.o:%.c
+	$(CC) -c -o $@ $^ $(CFLAGS)
+
 
 clean:
-	rm $(target)
-	rm -rf html.txt
-	rm -rf result.txt
-	#rm -rf start_no.txt
-	rm -rf html.txt
+	rm -rf $(all) $(objs)
+	rm db_test
+	rm test.db

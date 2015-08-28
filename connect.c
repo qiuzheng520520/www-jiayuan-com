@@ -63,12 +63,14 @@ sqlite3 *db;
 int create_db_file()  
 {
 	char sql[128];  
+	int rt;
 
 	sqlite3_open("test.db", &db); 
 
 	memset(sql, 0, 128);  
 	//sprintf(sql, "%s%s%s", "create table ",	"test_tb",	"(id INTEGER PRIMARY KEY, data TEXT)");  
-	sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
+	rt = sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
+	qz_printf("rt==%d\n",rt);
 	return 0;
 }
 int write_db(char *sql)
@@ -82,14 +84,14 @@ int print_result(char *buf, int len)
 	int fd;
 	int result;
 
-	printf("into print_result!\n");
+	qz_printf("into print_result!\n");
 	fd = open("html.txt",O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR);
 	if(fd == -1)
 	{
 		printf("error:open html file\n");
 		return -1;
 	}
-	printf("create html.txt success!\n");
+	qz_printf("create html.txt success!\n");
 	result = write(fd,buf,len);
 	if(result == -1)
 	{
@@ -189,6 +191,9 @@ int insert_array(struct result_str* str,char *p[])
 }
 
 int no_date;
+char sql_buff[1*1024*1024];
+//struct result_str result_str_buff;
+char p_str[20][4*1024];
 int do_things(int rfd)
 {
 	int rd;
@@ -196,30 +201,7 @@ int do_things(int rfd)
 	int i,num;
 	char var_buf[100],seg_buf[100];
 	char buff[100];
-	char sql_buff[1024];
 	int str_len;
-
-#if 0
-	fd1 = open("result.txt",O_CREAT | O_APPEND | O_WRONLY, S_IRUSR | S_IWUSR);
-	if(fd1 == -1)
-	{
-		printf("error:open result file\n");
-		return 0;
-	}
-	fd2 = open("html.txt",O_RDONLY);
-	if(fd2 == -1)
-	{
-		printf("error:open html file\n");
-		return -1;
-	}
-	rd = read(fd2,buff,RES_BUFF_LEN);
-	if(rd <= 0)
-	{
-		printf("read num:0\n");
-		return 0;
-	}
-	printf("rd:%d\n",rd);
-#endif
 
 	qz_printf("haha\n");
 	//qz_printf("%s",html_buff);
@@ -229,10 +211,10 @@ int do_things(int rfd)
 	num = sizeof(req_args)/sizeof(struct var);
 	f = html_buff;
 #ifdef DB_FILE
-	struct result_str result_str_buff;
-	char *p_str[50];
-	memset(&result_str_buff,0,sizeof(struct result_str));
-	insert_array(&result_str_buff,p_str);
+	//struct result_str result_str_buff;
+	//char *p_str[50];
+	//memset(&result_str_buff,0,sizeof(struct result_str));
+	//insert_array(&result_str_buff,p_str);
 #endif
 	for(i=0; i< num; i++)
 	{
@@ -251,21 +233,32 @@ int do_things(int rfd)
 		str_len = e - f - strlen(req_args[i].f_str);
 		memcpy(var_buf, p, str_len);
 		var_buf[str_len] = 0;
+		
+		qz_printf("e==%d\n",e-html_buff);
+		qz_printf("p==%d\n",p-html_buff);
+		qz_printf("str_len==%d\n",str_len);
 
 		sprintf(seg_buf,"%10s\t",var_buf);
 		strcat(res_buff,seg_buf);
-		f += strlen(req_args[i].f_str);
+	//	f += strlen(req_args[i].f_str);
+		f = e + strlen(req_args[i].e_str);
+		qz_printf("f:%d\n",f-html_buff);
 
 #ifdef DB_FILE
-		memcpy(p+i,seg_buf,strlen(seg_buf));	
+		memcpy(p_str[i],seg_buf,strlen(seg_buf));	
 #endif
 	}
 	res_buff[strlen(res_buff)] = '\n';
-	//qz_printf("%s\n",res_buff);
+//	qz_printf("%s\n",res_buff);
 	printf("ok\n");
 
 #ifdef DB_FILE
-	sprintf(sql_buff,"INSERT INTO \"test_tb\" VALUES( %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",p+0,p+1,p+2,p+3,p+4,p+5,p+6,p+7,p+8,p+9,p+10,p+11,p+12,p+13,p+14,p+15,p+16,p+17);
+	//for(i=0; i<num; i++)
+	//{	printf("%d:%s\n",i,p_str[i]);}
+	//qz_printf("hehe\n");
+	sprintf(sql_buff,"INSERT INTO \"test_tb\" VALUES( \'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",p_str+0,p_str+1,p_str+2,p_str+3,p_str+4,p_str+5,p_str+6,p_str+7,p_str+8,p_str+9,p_str+10,p_str+12,p_str+13,p_str+14,p_str+15,p_str+16,p_str+17,p_str+11);
+	qz_printf(sql_buff);
+	qz_printf("\n");
 	rd = write_db(sql_buff);
 #else
 	rd = write(rfd,res_buff,strlen(res_buff));
@@ -292,7 +285,7 @@ int read_start_no(int *start_num)
 	if(ret <= 0)
 		*start_num = START_NUM;
 	else
-		*start_num = atoi(buff)+1;
+		*start_num = atoi(buff);
 
 	return fd;
 }
@@ -322,7 +315,7 @@ int main(int argc, char **argv)
 
 			for(i=0; i< SUM_NUM; i++)
 			{
-				qz_printf("i==%d:",start_num + i);
+				printf("i==%d:",start_num + i);
 				cfd = http_connect();
 				if(cfd <= 0)
 				{
@@ -332,19 +325,20 @@ int main(int argc, char **argv)
 				//	continue;
 					return 0;
 				}
-			//	sprintf(id_buff,"%d            ",start_num + i);
-			//	lseek(nfd,0,SEEK_SET);
-			//	write(nfd,id_buff,strlen(id_buff));
 
 				sprintf(strRequest,"GET /%d HTTP/1.1\r\nHost: %s\r\nConnection: Close\r\n\r\n",start_num + i,DestIp);
 				ret = send_msg(cfd);
 				if (ret < 40*1024)
 				{
-					printf("\n");
-					continue;
+					printf("no\n");
+					goto write_start_no;
 				}
 				do_things(rfd);
 				close(cfd);
+write_start_no:
+				sprintf(id_buff,"%d            ",start_num + i);
+				lseek(nfd,0,SEEK_SET);
+				write(nfd,id_buff,strlen(id_buff));
 			}
 
 #ifdef DB_FILE

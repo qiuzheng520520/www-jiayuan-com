@@ -1,0 +1,1680 @@
+HTTP/1.1 200 OK
+Server: jyws
+Date: Fri, 28 Aug 2015 09:17:35 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Set-Cookie: PHPSESSID=e3edb8bff5af7af38cd771cd3194620b; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="CAO PSA OUR"
+Set-Cookie: SESSION_HASH=d3a9f292dd1a70d122db728053126d81106c9813; expires=Fri, 28-Aug-2015 19:17:34 GMT; path=/; domain=59.151.18.26
+
+17336
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>个人资料_威洛宾（佳缘ID:10000118）的个人空间_世纪佳缘交友网</title>
+        <link type="text/css" rel="stylesheet" href="http://images1.jyimg.com/w4/common/c/base.css" />
+        <link type="text/css" rel="stylesheet" href="http://images1.jyimg.com/w4/advert/c/jy_ad.css"/>
+        <link href="http://images1.jyimg.com/w4/profile_new/c/layer.css" rel="stylesheet" type="text/css" />
+        <link href="http://images1.jyimg.com/w4/profile_new/c/word.css" rel="stylesheet" type="text/css" />
+        <link href="http://images1.jyimg.com/w4/profile_new2/c/personal.css" rel="stylesheet" type="text/css" />
+        <link href="http://images1.jyimg.com/w4/profile_new/c/maplayer.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/jsLib/JY.login.js"></script> 
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/mai/j/jy_mai.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/global/j/common_tools.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/common/j/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new2/j/personal.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new2/j/scroll_pic.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new2/j/DNA.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new/j/ajax.js"></script>
+        <script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new/j/window.js"></script>
+        <!--<script type="text/javascript" src="http://images1.jyimg.com/w4/profile_new2/j/pic_show.js"></script>-->
+        <!--[if lte IE 6]>
+        <script type="text/javascript" src="http://images2.jyimg.com/w4/profile_new/j/dd_belatedpng.js"></script>
+        <script>
+            DD_belatedPNG.fix('.num_box,.pop_zan,.pop_zan2,.pop_zan1,.pop_lick_ico,.edit_text,.pic_num,.pho_text,.zan_ico,.zan_ico1,.pic_num,img, .set_top-1, .set_top_icon, span,.nav_next a,.pho_ico,.like_bg,.setup_pho,.edit_pho,.credit_bg'); 
+        </script>
+        <![endif]-->
+        <!--所有本页面用的JS-->
+		<script type="text/javascript">
+        //是否自己看自己
+                    var is_self = 0;
+        
+
+                    if_get_mebers = 1;
+                    $(window).scroll(function()
+                    {
+                     vi = $(window).scrollTop();
+                     if(vi >= 108 && if_get_mebers == 1 && is_self == 0){
+                           getInterestedMenbers();
+                           if_get_mebers = 0;
+                      }
+                    });
+                    
+                    $(document).ready(function() {//DOM的onload事件
+                        i = $(window).scrollTop();
+                        if(i >= 108 && if_get_mebers == 1 && is_self == 0){
+                            getInterestedMenbers();
+                            if_get_mebers = 0;
+                        }
+                    });
+	  var profile_pop_tj_xj = 1;
+	  var if_band = 1;
+                           if_band = 0;
+                  var photo_i = 0;
+                    function copy_url(){
+                    var _url = $("#zydz").val();
+                    if (navigator.userAgent.indexOf("MSIE") == -1)
+                    {
+                            $('.tjts').html('您的浏览器不支持复制功能,请手工复制文本框中内容');
+                            $('.tjts').show();
+                            return false;
+                    }else{
+                            window.clipboardData.setData('Text',_url);
+                            $("#tjhy_ts").html("复制成功");
+                            $("#tjhy_ts").fadeIn(1000).fadeOut(2000);
+                    }
+            } 
+            //弹层显示
+            function show_photo_lj_tc(type){
+                    //爱情密码弹层
+                    if(type == 4){
+                            $('.pop_btm_line').css("padding",'20px 0 18px');
+                            $('.mmts').hide();
+                            $('#opa_70').css({
+                                    'display' : 'block',
+                                    'opacity' : '0'
+                            }).animate({
+                                    'opacity' : 0.7
+                            }, 450, function() {
+                                    $(".pop_password_box").slideDown(600);
+                            });
+                    }else if(type == 13){//推荐给好友弹层
+                            if (navigator.userAgent.indexOf("MSIE") == -1){
+                                    $('.tjts').html('您的浏览器不支持复制功能,请手工复制文本框中内容');
+                                    $('.tjts').show();
+                                    $("#copy_an").hide();
+                            }else{
+                                    $("#copy_an").unbind().click(function(){
+                                            copy_url();
+                                            return false;
+                                    });
+                            }
+                            $('#opa_70').css({
+                                    'display' : 'block',
+                                    'opacity' : '0'
+                            }).animate({
+                                    'opacity' : 0.7
+                            }, 450, function() {
+                                    $("#open_commend").slideDown(600);
+                            });
+                    }else{//其他弹层
+                            var wenan_arr = new Array(); 
+                            wenan_arr[1] = '系统繁忙，请稍后重试！';
+                            wenan_arr[2] = '密码错误，请重试！';
+                            wenan_arr[3] = '对方照片设置为“星级会员可见”，您不是星级会员，故没有权限查看照片。快去升级为<a target="_blank" style="color: #2c81d6;" href="http://www.jiayuan.com/usercp/validateemail/certificate.php">星级会员</a>吧！';
+                            wenan_arr[5] = '对方照片设置为“有照片会员可见”，您还没有上传照片，故没有权限查看照片。快去<a target="_blank" style="color: #2c81d6;" href="http://www.jiayuan.com/usercp/photo.php">上传照片吧</a>吧！';
+                            wenan_arr[6] = '发送成功';
+                            wenan_arr[7] = '发送失败，请重试';
+                            wenan_arr[8] = '关注成功！你可以到<a class="col_blue" href="http://www.jiayuan.com/usercp/friends_new.php"  target="_blank">我关注的人</a>中查看';
+                            wenan_arr[9] = '不能添加已在好友列表中的会员！请到<a class="col_blue" href="http://www.jiayuan.com/usercp/friends_new.php"  target="_blank">我关注的人</a>中查看';
+                            wenan_arr[10] = '不能添加在阻止名单中的会员';
+                            wenan_arr[11] = '不能添加相同性别的会员';
+                            wenan_arr[12] = '参数错误';
+                            wenan_arr[14] = '您已经退出登录，请刷新页面后登录重试！';
+                            JY_Alert('提示',wenan_arr[type]);
+//                            $("#public_tc").find("p").html(wenan_arr[type]);
+//                            $('#opa_70').css({
+//                                    'display' : 'block',
+//                                    'opacity' : '0'
+//                            }).animate({
+//                                    'opacity' : 0.7
+//                            }, 450, function() {
+//                                    $("#public_tc").slideDown(600);
+//                            });
+                    }
+            }
+            //关闭弹层
+            function close_photo_lj_tc(type,have_follow){
+                    //其他弹层
+                    if(type == 1){
+                            $("#public_tc").slideUp(350, function() {
+                                    $('#opa_70').animate({
+                                            'opacity' : '0'
+                                    }, 550, function() {
+                                            $(this).css('display', 'none');
+                                    });
+                            });
+                    }else if(type == 2){//爱情密码弹层
+                            $(".pop_password_box").slideUp(350, function() {
+                                    $('#opa_70').animate({
+                                            'opacity' : '0'
+                                    }, 550, function() {
+                                            $(this).css('display', 'none');
+                                    });
+                            });
+                    }else if(type == 3){ //推荐给好友弹层
+                            $("#open_commend").slideUp(350, function() {
+                                    $('#opa_70').animate({
+                                            'opacity' : '0'
+                                    }, 550, function() {
+                                            $(this).css('display', 'none');
+                                    });
+                            });
+                    }
+            }
+        send_jy_pv2('|1017943_4|0');
+        send_jy_pv2('|1017943_75|0');
+        send_jy_pv2('|1017943_5|');
+        send_jy_pv2('|1017943_6|10000118');
+        send_jy_pv2('|1017943_79|0_10000118');
+                    send_jy_pv2('|1017943_23|10000118');
+                //设置域 为了弹出页面的js操作
+        var reg_host_const_flag = 0;
+        var reg_host_const_test = 0;
+        var reg_host_domain = document.domain;
+            
+        function setDomainForIframe(){ 
+           if(reg_host_const_flag == 0 || reg_host_const_flag == 7) {
+              if(reg_host_const_test == 1){ 
+                     document.domain = 'miuu.cn';
+                  }else{
+                     document.domain = 'jiayuan.com';
+                  }
+           }else{
+                  if(reg_host_const_test == 1){ 
+                     document.domain = 'miuu.cn';
+                  }else{
+                         document.domain = 'msn.com.cn';
+                  }
+           }
+        }
+                    var look_user = 0;
+                var getID = function(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return false}};
+        var chat_url	=	location.href;
+        var can_send_msg = 1;
+        var can_gz = 1;
+        
+        //判断是不是同性
+         
+            var isgay = 0;
+         
+        //判断是否显示照片弹层
+        var no_show = 0;
+                    no_show = 1;
+                //判断是否第一张为方头像，不是则显示第二张照片
+        var show_second_photo = 0;
+                                    send_jy_pv2('|1009622_4|10000118');
+                if(document.location.href.substring(document.location.href.length-7) == "#cp_kpd"){
+                openWindow('','','http://www.jiayuan.com/profile/reliable.php?uid=10000118',570,380);
+                document.location.href = document.location.href + "#1"; 
+        }
+        function init_chaturl(){
+                chat_url = chat_url.replace('cnm=','flt=');
+                chat_url = chat_url.replace('from=art','flt=art');
+                chat_url = chat_url.replace('from=story','flt=story'); 
+                chat_url = chat_url.replace('?t=0&','?flt=search&');
+                chat_url = chat_url.replace('?fr=o&','?flt=online&');
+                chat_url = chat_url.replace('?lt=msgbox','?flt=msgbox');
+                chat_url = chat_url.replace('&t=0&s=','&flt=search&s=');
+                chat_url = chat_url.replace('&fr=o&','&flt=online&');
+        }
+        init_chaturl();
+        //获取感兴趣的人
+        function getInterestedMenbers(){
+                var parm = encodeURIComponent('pid:personalmatch_profile_new|count:6|cachesql:3600|sim_uid:10000118');
+                url = 'http://www.jiayuan.com/ajax/interested.php?r='+Math.random()+'&ad_param[]='+parm;
+                ajax(url, '', getInterestedMenbersCallback);
+        }
+        function getInterestedMenbersCallback(data){
+                if(data){
+                        getID('interested').innerHTML = eval(data);
+                }
+                //else alert('请求失败，请重试！');
+        }
+        //礼物推荐
+        function getCommendGift(uid){
+                if(uid) ajaxGET('gift_commend','http://www.jiayuan.com/gift_commend.php?uid='+uid+'&new=2&is_new=');
+        }
+        //佳缘邮票快速充值js
+        function showById(id){
+                getID(id).style.display = 'block';
+        }
+
+        function hiddenById(id){
+                getID(id).style.display = 'none';
+        }
+        function changecostyinhang(typea,typeb){
+                if(typeb == 'qita'){			
+                        yinhang_qianshua = getID('yinhang_youpiao1').value;
+                        var reg_yh = new RegExp("^[0-9]*$");
+                        if(!reg_yh.test(yinhang_qianshua)){
+                                alert("请输入数字!");
+                                getID('yinhang_youpiao1').value = '';
+                                getID('cost_total_yinhang').innerHTML = '0';
+                                getID('yinhang_youpiaocc').value = '0';
+                                getID("yinhang_youpiao1").focus();
+                                return false;
+                        }
+                        yinhang_qianshua_int = parseInt(yinhang_qianshua,10);//十进制整形
+                        if(isNaN(yinhang_qianshua_int) ){
+                                yinhang_qianshua_int = 0;
+                                getID('yinhang_youpiao1').value = '';
+                                getID('cost_total_yinhang').innerHTML = '0';
+                        }else {
+                                                                getID('cost_total_yinhang').innerHTML = yinhang_qianshua_int*2;
+                                getID('yinhang_youpiaocc').value = yinhang_qianshua_int*2;
+                                                        }
+                }else{	
+                        getID('cost_total_yinhang').innerHTML = typea*2;
+                }
+        }
+        function check_form(zf_type){
+                if(zf_type == 'yh'){
+                        yinhang_qianshua = getID('yinhang_youpiao1').value;
+                        var reg_yh = new RegExp("^[0-9]*$");
+                        if(!reg_yh.test(yinhang_qianshua)){
+                                alert("请输入数字!");
+                                getID('yinhang_youpiao1').value = '';
+                                getID('cost_total_yinhang').innerHTML = '0';
+                                getID('yinhang_youpiaocc').value = '0';
+                                getID("yinhang_youpiao1").focus();
+                                return false;
+                        }
+                }else{
+                        yinhang_qianshua = getID('yinhang_zhifubao1').value;
+                        var reg_zfb = new RegExp("^[0-9]*$");
+                        if(!reg_zfb.test(yinhang_qianshua)){
+                                alert("请输入数字!");
+                                getID('yinhang_zhifubao1').value = '';
+                                getID('cost_total_zhifubao').innerHTML = '0';
+                                getID("yinhang_zhifubao1").focus();
+                                return false;
+                        }
+                }
+        }
+        function changecostzhifubao(typea,typeb){
+                if(typeb == 'qita'){			
+                        yinhang_qianshua = getID('yinhang_zhifubao1').value;
+                        var reg_zfb = new RegExp("^[0-9]*$");
+                        if(!reg_zfb.test(yinhang_qianshua)){
+                                alert("请输入数字!");
+                                getID('yinhang_zhifubao1').value = '';
+                                getID('cost_total_zhifubao').innerHTML = '0';
+                                getID("yinhang_zhifubao1").focus();
+                                return false;
+                        }
+                        yinhang_qianshua_int = parseInt(yinhang_qianshua,10);//十进制整形
+                        if(isNaN(yinhang_qianshua_int) ){
+                                yinhang_qianshua_int = 0;
+                                getID('yinhang_zhifubao1').value = '';
+                                getID('cost_total_zhifubao').innerHTML = '0';
+                        }else {
+                                                                getID('cost_total_zhifubao').innerHTML = yinhang_qianshua_int*2;
+                                                        }
+                }else{	
+                                                getID('cost_total_zhifubao').innerHTML = typea*2;
+                                        }
+        }
+        //提交爱情密码
+        function photo_pwd(){ 
+                var pwd = $(".pop_btn").val();
+                if(pwd == ''){
+                        $('.mmts').html('密码不能为空');
+                        $('.pop_btm_line').css("padding",'20px 0 4px');
+                        $('.mmts').show();
+                        return false;
+                }else{
+                        $.ajax({
+                                url: 'http://www.jiayuan.com/profile/dynmatch/ajax/check_photo_pwd.php',
+                                type: 'GET',
+                                data: {uid:10000118,pwd:pwd},
+                                timeout: 10000,
+                                error: function(){
+                                        $('.mmts').html('系统繁忙，请稍后重试！');
+                                        $('.pop_btm_line').css("padding",'20px 0 4px');
+                                        $('.mmts').show();
+                                },
+                                success: function(data){
+                                        if(data == 1){
+                                                location.reload();
+                                        }else{
+                                                $('.mmts').html('密码错误，请重试');
+                                                $('.pop_btm_line').css("padding",'20px 0 4px');
+                                                $('.mmts').show();
+                                        }
+                                }
+                        });
+                }
+        }
+        //发信
+        function send_msg(id,msg_type){ 
+                if(can_send_msg == 1){
+                        can_send_msg = 0;
+                        if(msg_type == 1){ //索要密码发信
+                                $.ajax({
+                                        url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
+                                        type: 'GET',
+                                        data: {uid:10000118,id:id,msg_type:msg_type,fxly:''},
+                                        timeout: 10000,
+                                        error: function(){
+                                                $("#mmtc_ts").html("系统繁忙");
+                                                $("#mmtc_ts").fadeIn(1000).fadeOut(2000);
+                                                can_send_msg = 1;
+                                                $('#mmfs').unbind().click(function(){
+                                                        $(this).unbind();
+                                                        send_msg(65,1);
+                                                });
+                                        },
+                                        success: function(data){
+                                                if(data == 1){
+                                                        $("#mmfs").html('已发送');
+                                                        $("#mmtc_ts").html("发送成功");
+                                                        $("#mmtc_ts").fadeIn(1000).fadeOut(2000);
+                                                        can_send_msg = 1;
+                                                }else if(data == 0){
+                                                        alert("您已经退出登录，请先登录！");
+                                                        location.reload();
+                                                }else{
+                                                        $("#mmtc_ts").html("发送失败");
+                                                        $("#mmtc_ts").fadeIn(1000).fadeOut(2000);
+                                                        can_send_msg = 1;
+                                                        $('#mmfs').unbind().click(function(){
+                                                                $(this).unbind();
+                                                                send_msg(65,1);
+                                                        });
+                                                }
+                                        }
+                                });
+                        }else if(msg_type == 2){ //照片弹层发信
+                                can_send_msg = 1;
+                                var msg_val = $("#i_say").val();
+                                if(msg_val == '' || msg_val == "在这里输入你想对他说的话..." || msg_val.replace(/\s+/g,"") == ''){
+                                        $(".zpfxts").html("发信内容不能为空！").show();
+                                        $('#zptc_fxan').unbind().click(function(){
+                                                $(this).unbind();
+                                                send_msg(0,2);
+                                        });
+                                        return false;
+                                }
+                                send_jy_pv2('|1017943_18|0');
+                                send_jy_pv2('|1017943_19|');
+                                send_jy_pv2('|1017943_76|0');
+                                send_jy_pv2('|1017943_80|0_10000118');
+                                $(".zpfxts").hide();
+                                $('#zptc_fx_form').submit();
+                                $("#zptc_fxan").html('已发送');
+                                hf_wa();
+                                /*$.ajax({
+                                        url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
+                                        type: 'GET',
+                                        data: {uid:10000118,msg_value:msg_val,msg_type:msg_type,fxly:''},
+                                        timeout: 10000,
+                                        error: function(){
+                                                $("#zptc_ts").html("系统繁忙");
+                                                $("#zptc_ts").fadeIn(1000).fadeOut(2000);
+                                                can_send_msg = 1;
+                                                $('#zptc_fxan').unbind().click(function(){
+                                                        $(this).unbind();
+                                                        send_msg(0,2);
+                                                });
+                                        },
+                                        success: function(data){
+                                                if(data == 1){
+                                                        send_jy_pv2('|1017943_18|0');
+                                                        send_jy_pv2('|1017943_19|');
+                                                        $("#zptc_fxan").html('已发送');
+                                                        $("#zptc_ts").html("发送成功");
+                                                        $("#zptc_ts").fadeIn(1000).fadeOut(2000);
+                                                        hf_wa();
+                                                        can_send_msg = 1;
+                                                }else if(data == 0){
+                                                        alert("您已经退出登录，请先登录！");
+                                                        location.reload();
+                                                }else{
+                                                        $("#zptc_ts").html("发送失败");
+                                                        $("#zptc_ts").fadeIn(1000).fadeOut(2000);
+                                                        can_send_msg = 1;
+                                                        $('#zptc_fxan').unbind().click(function(){
+                                                                $(this).unbind();
+                                                                send_msg(0,2);
+                                                        });
+                                                }
+                                        }
+                                });*/
+                        }else if(msg_type == 3){ //询问信息发信
+                                var a_obj = $("em.info_null[msg_id="+id+"]");
+                                $.ajax({
+                                        url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
+                                        type: 'GET',
+                                        data: {uid:10000118,id:id,msg_type:msg_type,fxly:''},
+                                        timeout: 10000,
+                                        error: function(){
+                                                a_obj.html('--').unbind();
+                                               a_obj.parent().append('<div class="tip6">发送失败，请重试</div>');
+                                                a_obj.parent().find(".tip6").stop().animate({'opacity':1}, 1000, function(){
+                                                        $(this).animate({'opacity':0}, 2000, function(){
+                                                                $(this).remove();
+                                                        });
+                                                });
+                                                can_send_msg = 1;
+                                        },
+                                        success: function(data){
+                                                if(data == 1){
+                                                        a_obj.html('--').unbind();
+                                                        a_obj.parent().append('<div class="tip1">你的心意已传达</div>');
+                                                        a_obj.parent().find(".tip1").stop().animate({'opacity':1}, 1000, function(){
+                                                                $(this).animate({'opacity':0}, 2000, function(){
+                                                                        $(this).remove();
+                                                                });
+                                                        });
+                                                        can_send_msg = 1;
+                                                }else if(data == 0){
+                                                        a_obj.html('--');
+                                                        $(".info_null").unbind();
+                                                        can_send_msg = 1;
+                                                        alert("您已经退出登录，请先登录！");
+                                                        location.reload();
+                                                }else{
+                                                        a_obj.html('--').unbind();
+                                                        a_obj.parent().append('<div class="tip6">发送失败，请重试</div>');
+                                                        a_obj.parent().find(".tip6").stop().animate({'opacity':1}, 1000, function(){
+                                                                $(this).animate({'opacity':0}, 2000, function(){
+                                                                        $(this).remove();
+                                                                });
+                                                        });
+                                                        can_send_msg = 1;
+                                                }
+                                        }
+                                });
+                        }else if(msg_type == 5){ //询问信息发信
+                                var a_obj = $("p.gn_text[msg_id="+id+"]");
+                                $.ajax({
+                                        url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
+                                        type: 'GET',
+                                        data: {uid:10000118,id:id,msg_type:3,fxly:''},
+                                        timeout: 10000,
+                                        error: function(){
+                                                a_obj.append('<font class="tip7_a">发送失败，请重试</font>');
+                                                a_obj.find(".tip7_a").stop().animate({'opacity':1}, 1000, function(){
+                                                        $(this).animate({'opacity':0}, 2000, function(){
+                                                                $(this).remove();
+                                                        });
+                                                });
+                                                a_obj.find("a").click(function(){
+                                                        $(this).unbind();
+                                                        send_msg(id,5);
+                                                });
+                                                can_send_msg = 1;
+                                        },
+                                        success: function(data){
+                                                if(data == 1){
+                                                        a_obj.html('你已经发送了邀请');
+                                                        a_obj.append('<font class="tip4_a">你的心意已传达</font>');
+                                                        a_obj.find(".tip4_a").stop().animate({'opacity':1}, 1000, function(){
+                                                                $(this).animate({'opacity':0}, 2000, function(){
+                                                                        $(this).remove();
+                                                                });
+                                                        });
+                                                        can_send_msg = 1;
+                                                }else if(data == 0){
+                                                        a_obj.html('--');
+                                                        $(".info_null").unbind();
+                                                        can_send_msg = 1;
+                                                        alert("您已经退出登录，请先登录！");
+                                                        location.reload();
+                                                }else{
+                                                        a_obj.append('<font class="tip7_a">发送失败，请重试</font>');
+                                                        a_obj.find(".tip7_a").stop().animate({'opacity':1}, 1000, function(){
+                                                                $(this).animate({'opacity':0}, 2000, function(){
+                                                                        $(this).remove();
+                                                                });
+                                                        });
+                                                        a_obj.find("a").click(function(){
+                                                                $(this).unbind();
+                                                                send_msg(id,5);
+                                                        });
+                                                        can_send_msg = 1;
+                                                }
+                                        }
+                                });
+                        }else if(msg_type == 6){ //询问信息发信
+                                var a_obj = $("p.gn_text[msg_id="+id+"]");
+                                $.ajax({
+                                        url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
+                                        type: 'GET',
+                                        data: {uid:10000118,id:id,msg_type:3,fxly:''},
+                                        timeout: 10000,
+                                        success: function(data){
+                                                if(data == 1){
+							send_jy_pv2('|profile_sendmsg|0');
+                                                        can_send_msg = 1;
+                                                }else if(data == 0){
+                                                        can_send_msg = 1;
+                                                        alert("您已经退出登录，请先登录！");
+                                                        location.reload();
+                                                }else{
+                                                        can_send_msg = 1;
+                                                }
+                                        }
+                                });
+                        }
+                }
+        }
+//加关注
+function add_follow(type){ 
+        if(type == 1){
+				show_photo_lj_tc(11);
+			}else{
+                if(can_gz == 1){
+			can_gz = 0; 
+						$("#zptc_ts").html("同性会员");
+			$("#zptc_ts").fadeIn(1000).fadeOut(2000);
+			setTimeout(function(){can_gz = 1;}, 3000);
+					}
+	}
+}
+function if_show_pic(type){
+        /**点击的是头像的部分**/
+       if(type == 1){
+                                    window.open("http://www.jiayuan.com/invite.php?uidhash=295ae192b4acae4b08d40b0ee0d137eb&type=15");return false;
+                      }
+                 loginWindow.openlogindiv('login',location.href, function(){location.reload();});return false;
+     }
+//人脸搜索更变照片url
+function face_url_change(type,id){
+        if(id == 0){
+				if(type == 1){
+			$("#like_ta1").hide();
+		}else{
+			$("#like_ta2_p").hide();
+		}
+			}else{
+				if(type == 1){
+			$("#like_ta1").hide();
+		}else{
+			$("#like_ta2_p").hide();
+		}
+			}
+}
+//右侧注册
+function profile_register(){
+	var sex=radio_value('sex');
+	var year=getID('year').value;
+	var month=getID('month').value;
+	var day=getID('day').value;
+	var province=getID('province').value;
+	var city=getID('city').value;
+	var marriage=radio_value('marriage');
+	var email=getID('username').value;
+	
+	var mydomain = "";
+	var host_name = location.hostname;
+	var host_arr = host_name.split(".");
+	var host_length = host_arr.length;
+
+	//当前域名
+	if(host_arr[1]=='com'||host_arr[1]=='cn'){
+		for(var i=0; i<host_length; i++){
+			mydomain += "." + host_arr[i];
+		}
+	}else{
+		for(var i=1; i<host_length; i++){
+		mydomain += "." + host_arr[i];
+		}
+	}
+
+	window.open('http://reg'+mydomain+'/?hao123=1&sex='+sex+'&year='+year+'&month='+month+'&day='+day+'&email='+email+'&province='+province+'&city='+city+'&marriage='+marriage+'&bd=9');
+}
+function radio_value(radio_name){
+	var radio_arr=document.getElementsByName(radio_name);
+	for(var i=0;i<radio_arr.length;i++){
+		if(radio_arr[i].checked==true){
+			return radio_arr[i].value;
+		}
+	}
+	return 0;
+}
+//照片弹层发信文案清除
+function hf_wa(){
+	$("#i_say").val('');
+	$("#i_say").attr("disabled","disabled");
+}
+//获取关注的人
+function get_gz_people(){
+	get_gz_people_num();
+	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans.php?uid=10000118','',function(data){ 
+				if(data != -1){
+			$("#gz_people ul").html(data);
+			$("#gz_people img").each(function (i, ele) {
+				loadImg($(ele).attr('_src'), function () {
+					$(ele).attr('src', $(ele).attr('_src'));
+					if($.browser.safari){
+						setTimeout(function(){
+							cutImage($(ele), 30, 30);
+						},10)
+					}else{
+						cutImage($(ele), 30, 30);
+					}
+				})
+			});
+			//关注的浮层
+			$(".gz_num").unbind('mouseenter').unbind('mouseleave').hover(function(){
+				if(window.timeY){
+					clearTimeout(window.timeY);
+				}
+				$('.gz_tip').show();
+			},function(){
+				window.timeY = setTimeout(function(){
+					$('.gz_tip').hide();
+				},500);
+			}); 
+		}else{
+			$(".gz_num").unbind('mouseenter').unbind('mouseleave');
+		}
+			});
+}
+//获取关注的人数
+function get_gz_people_num(){
+	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans_count.php?uid=10000118','',function(data){ 
+		if(data == 0){
+						$("#gz_people_a").html("关注");
+					}else{
+			$("#gz_people_a").html("关注("+data+"人)");
+		}
+	});
+}
+$(function() {
+                    $('#opa_70').css({
+        'height' : document.documentElement.scrollHeight
+    });
+	$("#pSmallImg img").each(function (i, ele) {
+		loadImg($(ele).attr('_src'), function () {
+			$(ele).attr('src', $(ele).attr('_src'));
+			if($.browser.safari){
+				setTimeout(function(){
+					cutImage($(ele), 52, 52);
+				},10)
+			}else{
+				cutImage($(ele), 52, 52);
+			}
+		})
+	});
+	loadImg($("#gs_ava").attr('_src'), function () {
+                $("#gs_ava").attr('src',$("#gs_ava").attr('_src'));
+		if($.browser.safari){
+			setTimeout(function(){
+				cutImage($("#gs_ava"), 80, 80);
+			},10)
+		}else{
+			cutImage($("#gs_ava"), 80, 80);
+		}
+	});
+//	loadImg($("#photo_over_ava").attr('_src'), function () {
+//		$("#photo_over_ava").attr('src',$("#photo_over_ava").attr('_src'));
+//		if($.browser.safari){
+//			setTimeout(function(){
+//				cutImage($("#photo_over_ava"), 80, 80);
+//			},10)
+//		}else{
+//			cutImage($("#photo_over_ava"), 80, 80);
+//		}
+//	})
+		setTimeout("loginWindow.openlogindiv('login',location.href, function(){location.reload();});",2000);
+	})
+//问答邮件
+function sendmail(id,muid,uid){
+        var id=id;
+        $.ajax({
+	url:"http://www.jiayuan.com/wenda/ajax_send_dnamail.php",
+	type:"post",
+	data:{muid:muid,uid:uid,mailid:id},
+	success:function(msg)
+	{
+	  if(msg==1)
+	  {
+	   $("#"+id+"").html("邀请邮件已发送");
+	  }else{JY_Alert('提示','发送失败，请重试！');}
+	}
+	})
+}
+
+//跳转到缘分圈
+function jump_to_fate() 
+{
+    jy_head_function.lbg_show("blogwrap",{lbg_sec:"3",lbg_sec_id:"blogwrap_secs",hide_callback:"fate_page()"});
+}
+
+function fate_page()
+{
+    window.location.href="http://www.jiayuan.com/fate/myfate.php?hash=5a2992e1acb44baed4080e0bd1e0eb37&show=2";
+}
+
+
+//签到后访客人数统计
+        </script>
+    </head>
+
+    <body>
+        <!-- 登录弹出开始 -->
+         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link type="text/css" href="http://images1.jyimg.com/w4/login/c/popupLogin_20110321.css?d=0701" rel="stylesheet" />
+<script src="http://images1.jyimg.com/w4/login/j/popupLogin_v2.js?d=1227" type="text/javascript"></script>
+<script src="http://images.jiayuan.com/w4/global/j/pv.js" type="text/javascript"></script> 
+<script type="text/javascript">
+
+
+function clear_text(obj)
+{
+   if(obj.value.match(/\//g))
+   {
+       obj.value="";
+   }
+}
+function check_text(obj)
+{
+   if(obj.value == "")
+   {
+     obj.value = '注册邮箱/手机号/佳缘ID';
+   }
+}
+var base_css_url='http://images.jiayuan.com/w4/login/i/dch_2.jpg'
+
+function  popup_count(flag)
+{
+    send_jy_pv2('new_popup_open_'+flag);
+}
+
+</script>
+
+</head>
+<body>
+<iframe src="" name="login_run" width=0 height=0 style="display:none"></iframe>
+<!--alert 1 -->
+<div id="login" style="display:none;" >
+<!-- alert 2 -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+loginWindow.onOpen = function(){
+	popup_count(2);
+}
+//-->
+</SCRIPT>
+<div>
+	<div class="alert_bg2">
+		<div class="clear text_pop_login">
+			<a title="close" class="closer" onclick="loginWindow.closelogindiv('login');send_jy_pv2('2new_popup_click_close_2');return false;" href="#"> </a>
+			<span class="l">老会员登录</span><span class="r">新会员注册</span>
+		</div>
+		<div class="clear">
+			<div class="alert_left">
+			<p id="errorInfo" class="red"></p>
+			<form target="login_run" action="/login/dologin.php?" method="post" id="loginForm" name="loginForm">
+				<dl class="login_box pb26 clear"> 
+					<dt>登录帐号：</dt> 
+					<dd>
+						<input value="邮箱/ID/手机号" type="text" class="texts gra" name="name" onkeyup="loginWindow.onkeyupName(event);" onkeydown="if(event.keyCode==9){document.getElementById('login_password').focus(); return false;}" onfocus="clear_text(this);this.className='texts';" onblur="check_text(this);this.className='texts gra';" id="login_email">
+					</dd> 
+				</dl>
+				<dl class="login_box clear">
+					<dt>密<font color="white">密码</font>码：</dt> 
+					<dd>
+						<input type="password" class="texts gra" onkeyup="loginWindow.onkeyupPass(event);" onkeydown="if(event.keyCode==9){document.getElementById('on_sumbit').focus();return false;}" id="login_password" autocomplete="off" onfocus="this.className='texts';" onblur="this.className='texts gra';" name="password">
+					</dd> 
+				</dl> 
+				<dl class="login_box pt5 clear">   
+					<dt></dt> 
+					<dd><span class="check_g"><input type="checkbox" id="check_save" name="remem_pass" checked="true"></span> <span class="gray">两周内自动登录</span></dd> 
+				</dl> 
+				<dl class="login_box pt13 clear"> 
+					<dt></dt> 
+					<dd> <input type="button" onmouseover="this.className='login_btn hov';" onmouseout="this.className='login_btn';" value="登 录" onclick="loginWindow.dologin();send_jy_pv2('2new_popup_click_submit_2')" class="login_btn" /> <span class="forget_pw"><a href="http://www.jiayuan.com/login/validate.php" target="_blank">忘记密码</a></span></dd> 
+				</dl> 
+					<input type="hidden" value="1" name="ajaxsubmit" id="ajax"> 
+					<input type="hidden" value="1" name="ljg_login"> 
+				</form> 
+				<div id="display_show" class="pop_openid clear"> 
+					<span class="l">您也可以用以下方式登录：</span> 
+					<span class="r"> 
+						<a href="http://www.jiayuan.com/general/t/?forward=qqAware&amp;c=11&amp;p=1" class="openid_qq pngfix">QQ</a> 
+						<a class="openid_weibo pngfix" href="http://www.jiayuan.com/general/t/?forward=sinaAware&c=11&p=2">新浪微博</a>
+						<a href="http://www.jiayuan.com/general/t/?forward=renrenAware&amp;c=11&amp;p=3" class="openid_renren pngfix">人人</a> 
+						<a href="http://www.jiayuan.com/general/t/?forward=baiduOauth&amp;c=11&amp;p=5" class="openid_baidu pngfix">百度</a> 
+						<a href="http://www.jiayuan.com/general/t/?forward=doubanAware&amp;c=11&amp;p=6" class="openid_douban pngfix">豆瓣</a> 
+						<a href="http://www.jiayuan.com/general/t/?forward=kaixinAware&amp;c=11&amp;p=4" class="openid_kaixin pngfix">开心</a> 
+						<a href="http://www.jiayuan.com/general/t/?forward=alipayOauth&amp;c=11&amp;p=7" class="openid_alipay pngfix">支付宝</a> 
+					</span> 
+				</div> 
+			</div>
+			<div class="alert_right">
+				<a class="reg_bg" onclick="send_jy_pv2('2new_popup_click_reg_2');" id="reglink" href="http://www.jiayuan.com/register/?bd=14" target="_blank">立即注册</a>
+			</div>
+		</div>
+	</div>
+   
+</div>
+ </div>
+</body>
+<script type="text/javascript">
+<!--
+	function display_div(data)
+	{
+	    if(data)
+		{
+		    document.getElementById("display_show").style.display="block";
+		}else
+		{
+            document.getElementById("display_hidden").style.display="block";
+		}
+	}
+//-->
+</script>
+ <script src="http://www.jiayuan.com/general/?m=oauthDisplayCb&domid=oauthDisplayCb&cb=display_div" type="text/javascript"></script>
+</html>        <!-- 登录弹出结束 -->
+        <!--header start -->
+        <script type="text/javascript" src="http://images1.jyimg.com/js/header/head_white.js"></script>
+        <!--header end -->
+
+        <!--subnav start -->
+        <div class="subnav_box yh">
+            <div class="main_1000 fn-clear">
+                <ul class="nav_l">
+                    <li class="cur"><a href="javascript:;">他的资料</a></li>
+                    <li style="display:none;"><a onclick="if(!if_show_pic()){return false;}" href="http://photo.jiayuan.com/showphoto.php?uid_hash=295ae192b4acae4b08d40b0ee0d137eb&tid=0&cache_key=" target="_blank">他的照片</a></li>
+                    <li><a href="http://www.jiayuan.com/more_gift.php?uid=10000118&tid=0&cache_key=" target="_blank" onmousedown="send_jy_pv2('|1017864_0|');send_jy_pv2('|1017864_1|0');">他的礼物</a></li>
+                                    </ul>
+                <!--自己看自己-->
+                                       <div class="nav_next"><a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_4|');send_jy_pv2('|1017864_5|0');">下一个有缘人</a></div>
+                 <!--看别人-->
+                            </div>
+        </div>
+        <!--subnav end --> 
+
+        <!--main start --> 
+        <!--top start -->
+        <div class="main_1000 bg_white mt15">
+            <div class="top_box fn-clear"> 
+                <!--会员信息 start-->
+                <div class="member_box"> 
+                    <!--轮播图 start-->
+                    <div class="pic_box">
+			<!--芝麻信用 start-->
+			    								    <a class="credit_bg credit_no" onclick="show_credit();" href="javascript:void(0);" onmousedown="send_jy_pv2('|profile_credit_clicknum|');" >芝麻信用分</a>
+							    			<!--芝麻信用 end-->
+                        <div class="pic_btm_bg"></div>
+                        <div class="pho_ico">
+                            				0
+			                            </div>
+                                                                                 <div class="big_pic fn-clear" id="bigImg">
+                                    <ul  >
+                                                  <li style="overflow:hidden;">
+                                                    <table cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td align="center" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_6|');send_jy_pv2('|1017864_7|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=295ae192b4acae4b08d40b0ee0d137eb"><img class="img_absolute" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"/></a></td>
+                                                        </tr>
+                                                    </table>            
+                                                </li>
+                                                                            </ul>
+                                </div>
+                                <div class="small_pic_box fn-clear" id="smallImg">
+                                    <a class="prev"></a>
+                                    <div class="small_pic fn-clear">
+                                        <ul>
+                                                 <li  class="now"  style="overflow:hidden;position: relative;" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_8|');send_jy_pv2('|1017864_9|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=295ae192b4acae4b08d40b0ee0d137eb"><img class="img_absolute_list" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_sp.jpg"/></a></li>
+                                                                                     </ul>
+                                    </div>
+                                     <a class="next"></a> 
+                                </div>
+                                                <script type="text/javascript">
+				$("#smallImg img").each(function (i, ele) {
+					loadImg($(ele).attr('_src'), function () {
+						$(ele).attr('src', $(ele).attr('_src'));
+						if($.browser.safari){
+							setTimeout(function(){
+								cutImage($(ele), 50, 50);
+							},10)
+						}else{
+							cutImage($(ele), 50, 50);
+						}
+					})
+				});
+                                
+                                $("#bigImg img").each(function (i, ele) {
+					loadImg($(ele).attr('_src'), function () {
+						$(ele).attr('src', $(ele).attr('_src'));
+						if($.browser.safari){
+							setTimeout(function(){
+								cutImage($(ele), 250, 250);
+							},10)
+						}else{
+							cutImage($(ele), 250, 250);
+						}
+					})
+				});
+                     </script>
+                                                                                    <div class="my_info yh">他不在线，
+                                                                                                                                     <span class="col_blue"><a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_18|');send_jy_pv2('|1017864_19|0');">查看最近登录时间</a></span>
+                                                                                                                    </div>
+                                                                        </div>
+                    <!--轮播图 end--> 
+
+                    <!--信息 start-->
+                    <div class="member_info_r yh">
+                        <div class="ml_ico">
+                            <a target="_blank" onmousedown="send_jy_pv2('|1017864_12|');send_jy_pv2('|1017864_13|0');" href="http://www.jiayuan.com/meilistar/"><h6>0</h6>
+                            <p>魅力值</p></a>
+                        </div>
+                                                         <h4>威洛宾<span>ID:10000118</span></h4>
+                                                <p class="member_ico_box">会员身份：<span class="member_dj">普通会员</span></p>
+                        <p class="member_ico_box">诚信等级：<span class="star_ico">
+			
+                                								
+				<span class="member_ico">
+                                        					<!--芝麻信用 start-->
+										    						<a onclick="show_credit();" href="javascript:void(0);" onmousedown="send_jy_pv2('|profile_credit_iconclicknum|');"><img title="芝麻信用" src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico14.png"/></a>
+					    										<!--芝麻信用 start-->
+                                </span>
+								
+				
+				                                                                            无，建议优先联系提交过身份证明的会员
+                                                                    								</span>
+                                                                <a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_28|');send_jy_pv2('|1017864_29|0');" class="col_blue_1">[ 查看靠谱度 ]</a></p>
+                        <!--<p class="member_ico_box">诚信等级：<span class="star_ico"></span><span class="member_ico"><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico1.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico2.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico3.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico4.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico5.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico6.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico7.png" alt=""/></span><span class="wt_ico"><a href="#"><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico8.png" alt=""/></a></span><a href="#" class="col_blue_1">[ 查看靠谱度 ]</a></p>-->
+                        <p class="col_999">认证信息是会员自愿提供，目前中国无完整渠道确保100%真实，请理性对待。</p>
+                        <h6 class="member_name">28岁，未婚，来自上海嘉定</h6>
+                         <ul class="member_info_list fn-clear">
+                            <li>
+                                <div class="fl f_gray_999">学历：</div>
+                                    <div class="fl pr">
+                                    <em>大专</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">身高：</div>
+                                    <div class="fl pr">
+                                    <em>172cm</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">购车：</div>
+                                    <div class="fl pr">
+                                    <a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a>                                </div>
+                            </li>
+                            <li>
+                                 <div class="fl f_gray_999">月薪：</div>
+                                    <div class="fl pr">
+                                    <a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a>                                </div>                                                                                                                                                                   
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">住房：</div>
+                                    <div class="fl pr">
+                                    <a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a>                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">体重：</div>
+                                    <div class="fl pr">
+                                    <em  >55公斤</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">星座：</div>
+                                    <div class="fl pr">
+                                    <em>狮子座</em>
+                                </div>
+                            </li>
+                            <li>
+                                 <div class="fl f_gray_999">民族：</div>
+                                    <div class="fl pr">
+                                    <em  >汉族</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">属相：</div>
+                                    <div class="fl pr">
+                                    <em>兔</em>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="fl f_gray_999">血型：</div>
+                                    <div class="fl pr">
+                                    <em  class="info_null" msg_id="3"  >--</em>
+                                </div>
+                            </li>
+                        </ul>
+                                                                                    <div class="fn-clear mt22">
+                                                                                <p class="appointment_txt">我的征友状态：找到意中人。谢谢关注！</p>
+                                                                                                <p><a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});"  > </a></p>
+                                                                                                                </div>
+                                                                        </div>
+                    <!--信息  end--> 
+                </div>
+                <!--会员信息 end --> 
+
+                <!--广告 start -->
+                <div class="banner_box yh">
+                        <div class="slide_banner" id="ad_pos_11"></div>
+                                                                                        <div style="display:none;" class="jb_text col_999"> 
+                                    <a style="cursor:pointer" onclick="show_photo_lj_tc(13);return false;" onmousedown="send_jy_pv2('|1017864_32|');send_jy_pv2('|1017864_33|0');">推荐</a>&nbsp;&nbsp;&nbsp;｜
+                                    <a onmousedown="send_jy_pv2('|1017864_34|');send_jy_pv2('|1017864_35|0');" href="http://www.jiayuan.com/complain/?uid_hash=295ae192b4acae4b08d40b0ee0d137eb&old=1" target="_blank">举报</a> 
+                                </div>
+                                        </div>
+                <!--广告 end --> 
+
+            </div>
+        </div>
+        <!--top end -->
+
+        <div class="main_1000 mt15 fn-clear"> 
+            <!--左侧内容区 end -->
+            <div class="content_705"> 
+                <!--打招呼跟随层 start -->
+                <div class="member_layer">
+                    <div class="fl pic80" onclick="if(!if_show_pic(1)){return false;}"><a target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=295ae192b4acae4b08d40b0ee0d137eb"><img class="img_absolute_b" id="gs_ava" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"></a></div>
+                    <div class="member_layer_con yh">
+                        <h4>威洛宾<span>上海嘉定，28岁，172CM，未婚</span></h4>
+                         
+                                                                        <div class="fn-clear">
+                                                                                                        <p class="appointment_txt">我的征友状态：找到意中人。谢谢关注！</p>
+                                                                                                                        <p><a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});"  > </a></p>
+                                                                                                                                                </div>
+                                                                          </div>
+
+                </div>
+                <!--打招呼跟随层 end -->
+                <!--自我介绍 end -->
+                <div class="bg_white">
+                    <div class="js_box">
+                                                        <h4>自我介绍</h4>
+                                                <div class="js_text">
+                            　　也许我很平凡，但是我绝不缺乏生活的热情和生命的梦想，也许我会孤单，但是我会一路找寻你的踪迹。遇见你，将是我生命中最绚烂的时刻。
+                        </div>
+                    </div>
+                </div>
+                <!--自我介绍 end --> 
+
+                <!--dna start -->
+                <!--自己看自己-->
+                                        <!--浏览同性或者未登录浏览-->    
+                                                <div class="bg_white fn-clear mt15"  style="display:none;"  >
+                             <div class="zl_DNA_a zl_DNA_b">
+                                 <h3><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/DNA_icon.gif"/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/DNA_text_1.gif"/>爱情DNA</h3>
+                                 <div class="DNA_xq">
+                                                                      </div>
+                                                                  <div class="DNV_rr">
+                                     <h6>以上内容由<span class="blue bg"> <a href="http://www.jiayuan.com/wenda" onmousedown="send_jy_pv2('|1017996_2|');" target="_blank">懂你</a></span>根据<b class="blue"><a href="http://www.jiayuan.com/wenda" onmousedown="send_jy_pv2('|1017996_2|');" target="_blank">个性匹配问答</a></b>生成</h6>
+                                 </div>
+                             </div>
+                         </div>
+                                                        <!--dna end --> 
+                <!--择偶要求 start -->
+                <div class="bg_white mt15">
+                    <div class="js_box">
+                                                         <h4>他的择偶要求</h4>
+                                                <ul class="js_list fn-clear">
+                            <li class="fn-clear"><span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</span><div class="ifno_r_con">20-50岁之间</div></li>
+                            <li class="fn-clear"><span>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：</span><div class="ifno_r_con">150-180厘米</div></li>
+                            <li class="fn-clear"><span>民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：</span><div class="ifno_r_con">不限</div></li>
+                            <li class="fn-clear"><span>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：</span><div class="ifno_r_con">不限</div></li>
+                            <li class="fn-clear"><span>相&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册：</span><div class="ifno_r_con">不限</div></li>
+                            <li class="fn-clear"><span>婚姻状况：</span><div class="ifno_r_con">不限</div></li>
+                            <li class="fn-clear">
+                                <span>居&nbsp;&nbsp;住&nbsp;地：</span>
+                                <div class="ifno_r_con_1"> 不限</div>
+                            </li>
+                            <li class="fn-clear"><span>诚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：</span><div class="ifno_r_con">不限</div></li>
+                            <!--<em class="col_red">*</em>-->
+                        </ul>
+                        <p class="js_tip_text">标有<span class="col_red">*</span>的择偶条件是必须符合的条件</p>
+                    </div>
+                </div>
+                <!--择偶要求 end --> 
+
+                <!--生活方式 start -->
+                <div class="bg_white mt15">
+                    <div class="js_box">
+                        <h4>生活方式</h4>
+                                                        <h6 class="yh">嗜好习惯</h6>
+                                                                        <ul class="js_list fn-clear">
+                                                                                                    <p class="col_999">未填</p>
+                                                                                    </ul>    
+                                                <div class="pt25 fn-clear">
+                            <div class="js_tit yh">家务</div>
+                            <div class="choice_box pr15 fn-clear">
+                                <div class="choice_l"></div>
+                                <dl class="choice_m fn-clear">
+                                    <dt>水平等级</dt>
+                                    <dd  >不会</dd>
+                                    <dd class="cur" >会一些</dd>
+                                    <dd  >精通</dd>
+                                </dl>
+                                <div class="choice_r"></div>
+                            </div>
+                                                     </div>
+                        <div class="about_box fn-clear">
+                            <span class="col_999">家务分配：</span>
+                        <div class="fl pr">
+                            <em  class="info_null" msg_id="25"  >--</em>
+                        </div>
+                        </div>
+                        <div class="pt25 fn-clear">
+                            <div class="js_tit yh">宠物</div>
+                            <div class="choice_box pr15 fn-clear">
+                                
+                                <div class="choice_l"></div>
+                                <dl class="choice_m fn-clear">
+                                    <dt>喜欢程度</dt>
+                                    <dd  >不喜欢</dd>
+                                    <dd class="cur" >还可以</dd>
+                                    <dd  >很喜欢</dd>
+                                </dl>
+                                <div class="choice_r"></div>
+                            </div>
+                                                    </div>
+                        <div class="about_box fn-clear">
+                            <span class="col_999">关于宠物：</span>
+                            <div class="fl pr">
+                                 <em  class="info_null" msg_id="28"  >--</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--生活方式 end --> 
+
+                <!--经济实力 start -->
+                <div class="bg_white mt15">
+                    <div class="js_box">
+                                                         <h4>经济实力</h4>
+                                                <ul class="js_list fn-clear">
+                            <li class="fn-clear">
+                                <span>月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;薪：</span>
+                                <div class="ifno_r_con"><a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>购&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;房：</span>
+                                <div class="ifno_r_con"><a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>购&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;车：</span>
+                                <div class="ifno_r_con"><a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});">登录后可见</a></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>经济观念：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="10"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>投资理财：</span>
+                                <div class="ifno_r_con_1"><em  class="info_null" msg_id="8"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>外债贷款：</span>
+                                <div class="ifno_r_con_1"><em  class="info_null" msg_id="9"  >--</em></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--经济实力 end --> 
+
+                <!--工作学习 start -->
+                <div class="bg_white mt15">
+                    <div class="js_box">
+                        <h4>工作学习</h4>
+                                                         <h6 class="yh">工作</h6>
+                                                <ul class="js_list fn-clear">
+                                                                <li class="fn-clear">
+                                        <span>职业职位：</span>
+                                        <div class="ifno_r_con"><em  >体育工作者</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>公司行业：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="31"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>公司类型：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="32"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>福利待遇：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="33"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>工作状态：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="34"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>调动工作可能性：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="35"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>事业与家庭：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="37"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>海外工作可能性：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="36"  >--</em></div>
+                                    </li>
+                                                     </ul>
+                                                        <h6 class="yh">学习</h6>
+                                                <ul class="js_list fn-clear">
+                                                                <li class="fn-clear">
+                                        <span>毕业院校：</span>
+                                        <div class="ifno_r_con"><em  >上海大学</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>专业类型：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="40"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>语言能力：</span>
+                                        <div class="ifno_r_con_1"><em  class="info_null" msg_id="41"  >--</em></div>
+                                    </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <!--工作学习 end --> 
+                <!--婚姻观念 start -->
+                <div class="bg_white mt15">
+                    <div class="js_box">
+                          <h4>婚姻观念</h4>
+                                                         <h6 class="yh">关于自己</h6>
+                                                <ul class="js_list fn-clear">
+                            <li class="fn-clear">
+                                <span>籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="43"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;口：</span>
+                                <div class="ifno_r_con"><em  >山东聊城</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</span>
+                                <div class="ifno_r_con"><em  >中国大陆</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>个性待征：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="45"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>幽&nbsp;&nbsp;默&nbsp;感：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="46"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>脾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;气：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="47"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>对待感情：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="48"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>是否要小孩：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="49"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>何时结婚：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="50"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>是否能接受异地恋：</span>
+                                <div class="ifno_r_con"><em  class="info_null" msg_id="51"  >--</em></div>
+                            </li>
+                            <li class="fn-clear">
+                                <span>理想婚姻：</span>
+                                <div class="ifno_r_con_1"><em  class="info_null" msg_id="52"  >--</em></div>
+                            </li>
+                        </ul>
+                                                        <h6 class="yh mt5">关于家庭</h6>
+                                                <ul class="js_list fn-clear">
+                                                                                                                                                            <p class="col_999">未填</p>
+                                                                                                                                    </ul>
+                    </div>
+                </div>
+                <!--婚姻观念 end --> 
+
+                <!--收到的礼物 end -->
+                <div class="bg_white mt15">
+                                    </div>
+                <!--收到的礼物 end --> 
+
+            </div>
+            <!--左侧内容区 end --> 
+            <!--slidebar end -->
+            <div class="slidebar bg_white"> 
+                <!--广告位 start -->
+                <div id="ad_pos_102"></div>
+                <!--广告位 end --> 
+                		<script type="text/javascript" src="http://images1.jyimg.com/w4/register/j/date_array.js"></script>
+		<script type="text/javascript" src="http://images1.jyimg.com/w4/register/j/work_location_array.js"></script>
+		<script type="text/javascript" src="http://images1.jyimg.com/w4/register/j/love_location_array.js"></script>
+		<script type="text/javascript" src="http://images1.jyimg.com/w4/register/j/function.js"></script>
+		<script type="text/javascript">
+			function options_selected(){
+				 var opts_year = document.getElementById("year");
+				 var opts_month = document.getElementById("month");
+				 var opts_day = document.getElementById("day");
+				 opts_year.options[10].selected = 'selected';
+				 opts_month.options[1].selected = 'selected';
+				 build_second(11,'day',DOK);
+				 opts_day.options[1].selected = 'selected';
+			}
+		</script>
+		 <!--注册世纪佳缘 开始-->
+		  <div class="right_reg right_box mt10">
+				<h2>注册世纪佳缘</h2>
+				<div class="right_reg_content">
+					<table width="240" border="0" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td width="40">我是：</td>
+						<td width="200">
+							<input id="sex" name="sex" type="radio" value="m" checked="checked" /><span>男</span>
+							<input id="sex" name="sex" type="radio" value="f"  /><span>女</span>
+					</td>
+					  </tr>
+					  <tr>
+						<td>生日：</td>
+						<td>
+						<select name="year" id="year" class="select_01">
+							<option label="--请选择--" value="0">--请选择--</option>
+<option label="1997" value="1997">1997</option>
+<option label="1996" value="1996">1996</option>
+<option label="1995" value="1995">1995</option>
+<option label="1994" value="1994">1994</option>
+<option label="1993" value="1993">1993</option>
+<option label="1992" value="1992">1992</option>
+<option label="1991" value="1991">1991</option>
+<option label="1990" value="1990">1990</option>
+<option label="1989" value="1989">1989</option>
+<option label="1988" value="1988">1988</option>
+<option label="1987" value="1987">1987</option>
+<option label="1986" value="1986">1986</option>
+<option label="1985" value="1985">1985</option>
+<option label="1984" value="1984">1984</option>
+<option label="1983" value="1983">1983</option>
+<option label="1982" value="1982">1982</option>
+<option label="1981" value="1981">1981</option>
+<option label="1980" value="1980">1980</option>
+<option label="1979" value="1979">1979</option>
+<option label="1978" value="1978">1978</option>
+<option label="1977" value="1977">1977</option>
+<option label="1976" value="1976">1976</option>
+<option label="1975" value="1975">1975</option>
+<option label="1974" value="1974">1974</option>
+<option label="1973" value="1973">1973</option>
+<option label="1972" value="1972">1972</option>
+<option label="1971" value="1971">1971</option>
+<option label="1970" value="1970">1970</option>
+<option label="1969" value="1969">1969</option>
+<option label="1968" value="1968">1968</option>
+<option label="1967" value="1967">1967</option>
+<option label="1966" value="1966">1966</option>
+<option label="1965" value="1965">1965</option>
+<option label="1964" value="1964">1964</option>
+<option label="1963" value="1963">1963</option>
+<option label="1962" value="1962">1962</option>
+<option label="1961" value="1961">1961</option>
+<option label="1960" value="1960">1960</option>
+<option label="1959" value="1959">1959</option>
+<option label="1958" value="1958">1958</option>
+<option label="1957" value="1957">1957</option>
+<option label="1956" value="1956">1956</option>
+<option label="1955" value="1955">1955</option>
+<option label="1954" value="1954">1954</option>
+<option label="1953" value="1953">1953</option>
+<option label="1952" value="1952">1952</option>
+<option label="1951" value="1951">1951</option>
+<option label="1950" value="1950">1950</option>
+<option label="1949" value="1949">1949</option>
+<option label="1948" value="1948">1948</option>
+<option label="1947" value="1947">1947</option>
+<option label="1946" value="1946">1946</option>
+<option label="1945" value="1945">1945</option>
+<option label="1944" value="1944">1944</option>
+<option label="1943" value="1943">1943</option>
+<option label="1942" value="1942">1942</option>
+<option label="1941" value="1941">1941</option>
+<option label="1940" value="1940">1940</option>
+<option label="1939" value="1939">1939</option>
+<option label="1938" value="1938">1938</option>
+<option label="1937" value="1937">1937</option>
+<option label="1936" value="1936">1936</option>
+<option label="1935" value="1935">1935</option>
+<option label="1934" value="1934">1934</option>
+<option label="1933" value="1933">1933</option>
+<option label="1932" value="1932">1932</option>
+<option label="1931" value="1931">1931</option>
+<option label="1930" value="1930">1930</option>
+<option label="1929" value="1929">1929</option>
+<option label="1928" value="1928">1928</option>
+<option label="1927" value="1927">1927</option>
+<option label="1926" value="1926">1926</option>
+<option label="1925" value="1925">1925</option>
+<option label="1924" value="1924">1924</option>
+<option label="1923" value="1923">1923</option>
+<option label="1922" value="1922">1922</option>
+<option label="1921" value="1921">1921</option>
+<option label="1920" value="1920">1920</option>
+<option label="1919" value="1919">1919</option>
+<option label="1918" value="1918">1918</option>
+<option label="1917" value="1917">1917</option>
+<option label="1916" value="1916">1916</option>
+
+						  </select>
+						  年
+						<select name="month" id="month" class="select_02" onchange="build_second(this.value,'day',DOK);"></select>
+					月
+					<select name="day" id="day" class="select_02">
+						<option value=0>--请选择--</option>
+					  </select>
+					  <script type="text/javascript">
+						build_select("month","day",DSK,DOK,"");
+						</script>
+					日</td>
+					  </tr>
+					  <tr>
+						<td>我在：</td>
+						<td>
+						<select name="province" id="province" onchange="build_second(this.value,'city',COK);"> </select>
+						<select name="city" id="city"><option value=0>--请选择--</option></select>
+						<script type="text/javascript">
+								build_select("province","city",CSK,COK,"");
+						</script>
+						</td>
+					  </tr>
+					  <tr>
+						<td>婚姻：</td>
+						<td>
+							<input id="marriage" name="marriage" type="radio" value="1" checked="checked" /><span>未婚</span>
+							<input id="marriage" name="marriage" type="radio" value="2" /><span>离异</span>
+							<input id="marriage" name="marriage" type="radio" value="3" /><span>丧偶</span>
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">
+							<table width="240" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="60">注册邮箱：</td>
+									<td width="180"> <input id="username" name="username" type="text" class="text" /></td>
+								</tr>
+							</table>
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="2"><a href="javascript:send_jy_pv2('profile_register_zhq');profile_register();" class="right_reg_btn yh">免费注册</a></td>
+					  </tr>
+					</table>
+				</div>
+		  </div>
+		<script type="text/javascript">
+		options_selected();		
+		</script>
+			<!--注册世纪佳缘 结束-->
+			                <!--vip会员 start-->
+                                
+                                <!--vip会员end--> 
+
+                <!--可能感兴趣的人start-->
+                                    <h2 class="slidebar_tit pt20"> <a class="col_blue" href="javascript:getInterestedMenbers();" onmousedown="send_jy_pv2('|1017867_24|');send_jy_pv2('|1017867_25|0');">换一组</a> 您可能感兴趣的人 </h2>
+                    <div id="interested"><img src="http://images1.jyimg.com/w4/profile_new/i/loading_min.gif" /></div>
+                                <!--可能感兴趣的人end--> 
+
+                <!--礼物推荐start-->
+                <h2 class="slidebar_tit pt20"> <a class="col_blue"  href="javascript:getCommendGift(10000118);" onmousedown="send_jy_pv2('|1017867_28|');send_jy_pv2('|1017867_29|0');">换一组</a> 礼物推荐 </h2>
+                <div id="gift_commend"><img src="http://images1.jyimg.com/w4/profile_new/i/loading_min.gif" /><script type="text/javascript">getCommendGift(10000118);</script></div>
+                <!--礼物推荐end--> 
+
+                <!--推荐服务start-->
+                <div id="ad_pos_72">
+                    
+                </div>
+                <!--推荐服务end--> 
+
+                <!--佳缘邮票快速充值start-->
+                                <!--佳缘邮票快速充值end--> 
+            </div>
+            <!--slidebar end --> 
+        </div>
+
+        <!--main end -->
+        <!--意见、返回顶部-->
+        <div id="goTop" class="goTop">
+            <ul>
+                <li><a class="feedBack" target="_blank" href="http://www.jiayuan.com/helpcenter/postmail2.php?refresh=1&pid=294">意见反馈</a></li>
+                <li><a class="helpCenter" href="http://www.jiayuan.com/helpcenter/list.php?type1=1&type2=1&type3=17" target="_blank">帮助中心</a></li>
+                <li><a id="backTop" class="backTop" href="javascript:;">返回顶部</a></li>
+            </ul>
+        </div>
+        <!--意见、返回顶部-->
+        <!--弹出层 start-->
+        <div id="bg"  style="display:none"></div>
+        <div class="layer" id="open_window" style="display:none;">
+            <div class="layer_box">
+                <div class="layer_title" id="open_window_head"><h2><img src="http://images1.jyimg.com/w4/profile_new/i/op_but_close.gif" onclick="closeWindow()" title="关闭" /><span id="open_window_title"></span></h2></div>
+                <div class="layer_content" id="open_window_content"></div>
+                <div id="iframe_loading" style="position: absolute;"><img id="loading_focus" src="http://images1.jyimg.com/w4/profile_new/i/loading.gif" /></div>
+            </div> 
+        </div> 
+        <!--弹出层 end-->
+        <!--我的地图 start-->
+        <div class="layer" id="open_map" style="display:none;">
+            <div class="map_layer">
+                <div class="mapclose"><a style="cursor:pointer" onclick="closeWindowById('open_map')" class="close"></a><div class="clear"></div></div>
+                <div class="mapiframe">
+                    <iframe height="263" width="494" src="" scrolling="no" frameborder="0" id="mapiframe"></iframe>
+                </div>
+                <div class="mapbotton"><a href="http://www.jiayuan.com/map/result.php?from=profile" target="_blank" onmousedown="send_jy_pv2('|220167_6|');"><img src="http://images1.jyimg.com/w4/profile_new/i/mapbotton.jpg" width="138" height="41" border="0" /></a></div>
+            </div>
+        </div>
+        <!--我的地图 end-->
+        <!--弹层-->
+        <div class="pop_zl_box" id="public_tc" style="display:none;" >
+            <div class="pr">
+                <div class="pop_colsed" onclick="close_photo_lj_tc(1);" title="关闭"></div>
+                <div class="pl20 pt25">
+                    <h6 class="f_20 yh">温馨提示：</h6>
+                    <p class="f14 f_gray_666 pt5 pb10"></p>
+                    <a class="btn_4 mr" onclick="close_photo_lj_tc(1);
+                            return false;" style="cursor:pointer">确定</a>
+                </div>
+            </div>
+        </div>
+        <!--/弹层-->
+        <!--推荐给好友 start-->
+        <div class="pop_zl_box" id="open_commend" style="display:none;">
+            <div class="pr">
+                <div class="tip5" id="tjhy_ts"></div>
+                <div class="pop_colsed" onclick="close_photo_lj_tc(3);" title="关闭"></div>
+                <div class="pl20 pt25">
+                    <h6 class="f_20 yh">将威洛宾推荐给好友</h6>
+                    <p class="f14 f_gray_666 pt5 pb10">觉得威洛宾不错，复制以下链接发送给好友吧！</p>
+                    <p class="f14 f_gray_666 pt5 pb10">征友地址：<input type="text" class="tj-input" id="zydz" value="http://www.jiayuan.com/10000118" /></p>
+                    <span class="tjts"></span>
+                    <a class="btn_4 mr" id="copy_an" style="cursor:pointer">复制</a>
+                </div>
+            </div>
+        </div>
+        <!--密码弹层-->
+        <div class="pop_password_box" id="aqmm_tc" style="display:none;">
+            <div class="pr">
+                <div id="mmtc_ts" class="tip3"></div>
+                <div class="pop_colsed" onclick="close_photo_lj_tc(2);" title="关闭"></div>
+                <h4 class="yh f22 pt20">查看照片需要爱情密码</h4>
+                <div class="pop_btm_line clearfix">
+                    <div class="hmd_img"><img src="http://images1.jyimg.com/w4/profile_new/i/pop_ico1.png"></div>
+                    <div class="fl pl15">
+                        <p class="f_14 f_gray_666">对方设置了爱情密码，请输入密码查看照片</p>
+                        <div class="clearfix pt5">
+                            <div class="fl mt5 pr10">
+                                <input name="" type="text" class="pop_btn">
+                            </div>
+                            <a class="pop_btn_1 fl" onclick="photo_pwd();
+                                    return false;" style="cursor:pointer">确认</a>
+                        </div>
+                        <span class="mmts"></span>
+                    </div>
+                </div>
+                <p class="f14 f_gray_666 pt20 pb10">如果您不知道密码，可以[发信]给对方索取密码</p>
+                <div>
+                    <textarea name="" cols="" rows="" disabled="disabled" class="pop_msg_btn">你是我心仪的类型，很想知道你的庐山真面目，可以告诉我你照片的爱情密码吗？</textarea>
+                </div>
+                 
+                                <span class="mmtxts">对方为成功会员，请联系其他异性会员。</span>
+                                            </div>
+        </div>
+        <!--/密码弹层-->
+        <!--通用弹窗-->
+        <div>
+            <div id="zptc_ts"></div>
+        </div>
+        <div id="opa_70" class="mask"></div>
+         <script type='text/javascript' src='http://mai.jiayuan.com/mai.php?pd_id=3'></script>
+<!--        <script type="text/javascript">
+        var head = document.getElementsByTagName("head")[0];       
+        var js = document.createElement("script");       
+        js.src = "http://ads.jiayuan.com/adajax.php?pd_id=3";       
+        js.onload = js.onreadystatechange = function()       
+        {       
+            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")       
+            {   
+                 head.removeChild(js);  
+            }       
+        }       
+        head.appendChild(js);  	
+        </script>-->
+        <!--footer start -->
+        <script type="text/javascript" src="http://images2.jyimg.com/w4/global/j/foot.js"></script>
+        <!--footer end -->
+                <!--注册弹窗，0开始-->
+        <script type="text/javascript">
+        //loginWindow.openlogindiv('login',location.href, function(){location.reload();});
+            setTimeout("loginWindow.openlogindiv('login',location.href, function(){location.reload();});", 2000);
+        </script>
+        <!--注册弹窗，结束-->
+            </body>
+    <script>
+	
+	function show_credit()
+	{
+	    jy_head_function.lbg_show('credit_box');
+	}
+	function hide_credit()
+	{
+	    jy_head_function.lbg_hide('credit_box');
+	}
+    </script>
+<!-- 芝麻信用认证（未认证）弹层 start -->
+<div id="credit_box"  style="display:none;">
+    <div class="credit_box">
+	    <h1 class="credit_title">温馨提示<a href="javascript:void(0);" onclick="hide_credit();" class="credit_close"></a></h1>
+	    <p>请先<a href="http://www.jiayuan.com/usercp/approve/index.php?zmxy_key=zmxy" target="_blank">手机认证</a>之后，再来开通芝麻认证，谢谢！</p>
+	    <a href="javascript:void(0);" onclick="hide_credit();" class="credit_submit">确定</a>
+    </div>
+</div>
+<!-- 芝麻信用认证（未认证）弹层 end -->
+</html>
+0
+
