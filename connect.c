@@ -238,15 +238,16 @@ int do_things(int rfd)
 		qz_printf("p==%d\n",p-html_buff);
 		qz_printf("str_len==%d\n",str_len);
 		qz_printf("f_str_len==%d\n",strlen(req_args[i].f_str));
+		printf("%s\n",var_buf);
 
-		sprintf(seg_buf,"%10s\t",var_buf);
-		strcat(res_buff,seg_buf);
+		//sprintf(seg_buf,"%10s\t",var_buf);
+		//strcat(res_buff,seg_buf);
 	//	f += strlen(req_args[i].f_str);
 		f = e + strlen(req_args[i].e_str);
 		qz_printf("f:%d\n",f-html_buff);
 
 #ifdef DB_FILE
-		memcpy(p_str[i],seg_buf,strlen(seg_buf));	
+		memcpy(p_str[i],var_buf,strlen(var_buf));	
 #endif
 	}
 	res_buff[strlen(res_buff)] = '\n';
@@ -257,7 +258,12 @@ int do_things(int rfd)
 	//for(i=0; i<num; i++)
 	//{	printf("%d:%s\n",i,p_str[i]);}
 	//qz_printf("hehe\n");
-	sprintf(sql_buff,"INSERT INTO \"test_tb\" VALUES( \'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",p_str+0,p_str+1,p_str+2,p_str+3,p_str+4,p_str+5,p_str+6,p_str+7,p_str+8,p_str+9,p_str+10,p_str+12,p_str+13,p_str+14,p_str+15,p_str+16,p_str+17,p_str+11);
+	sprintf(sql_buff,"%s","INSERT INTO \"test_tb\" VALUES(");
+	strcat(sql_buff,p_str);
+	for(i=1;i<num;i++)
+	{	strcat(sql_buff,",");strcat(sql_buff,p_str+i);}
+	strcat(sql_buff,")");
+	//sprintf(sql_buff,"INSERT INTO \"test_tb\" VALUES( \'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",p_str+0,p_str+1,p_str+2,p_str+3,p_str+4,p_str+5,p_str+6,p_str+7,p_str+8,p_str+9,p_str+10,p_str+12,p_str+13,p_str+14,p_str+15,p_str+16,p_str+17,p_str+11);
 	qz_printf(sql_buff);
 	qz_printf("\n");
 	rd = write_db(sql_buff);
