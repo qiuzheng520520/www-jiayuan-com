@@ -219,8 +219,11 @@ int do_things(int rfd)
 	for(i=0; i< num; i++)
 	{
 		qz_printf("i == %d\n",i);
-		f = strstr(f,req_args[i].front);
+		//f = strstr(f,req_args[i].front);
+		f = strstr(html_buff,req_args[i].front);
 		qz_printf("f:%d\n",f-html_buff);
+		if(f <= 0)
+		{ memcpy(p_str[i],"---",strlen(var_buf));continue; }
 		if(f == 0 && i==8)
 		{
 			i+=2;
@@ -243,7 +246,7 @@ int do_things(int rfd)
 		//sprintf(seg_buf,"%10s\t",var_buf);
 		//strcat(res_buff,seg_buf);
 	//	f += strlen(req_args[i].f_str);
-		f = e + strlen(req_args[i].e_str);
+		//f = e + strlen(req_args[i].e_str);
 		qz_printf("f:%d\n",f-html_buff);
 
 #ifdef DB_FILE

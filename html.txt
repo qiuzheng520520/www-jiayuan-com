@@ -1,22 +1,22 @@
 HTTP/1.1 200 OK
 Server: jyws
-Date: Fri, 28 Aug 2015 15:56:11 GMT
+Date: Sat, 29 Aug 2015 07:51:50 GMT
 Content-Type: text/html; charset=UTF-8
 Transfer-Encoding: chunked
 Connection: close
-Set-Cookie: PHPSESSID=45e9af3972316b170253faa69eeebf79; path=/
+Set-Cookie: PHPSESSID=8c03dd6ce777e9e616d33bf2b650df54; path=/
 Expires: Thu, 19 Nov 1981 08:52:00 GMT
 Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
 Pragma: no-cache
 P3P: CP="CAO PSA OUR"
-Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 29-Aug-2015 01:56:11 GMT; path=/; domain=59.151.18.26
+Set-Cookie: SESSION_HASH=66d86fcc71cea328b4860a8eff19ae1e848006ec; expires=Sat, 29-Aug-2015 17:51:49 GMT; path=/; domain=59.151.18.26
 
-168e0
+197a0
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>个人资料_◆悲傷罘斷。（佳缘ID:10000028）的个人空间_世纪佳缘交友网</title>
+        <title>个人资料_じ牛メ仔い（佳缘ID:10000056）的个人空间_世纪佳缘交友网</title>
         <link type="text/css" rel="stylesheet" href="http://images1.jyimg.com/w4/common/c/base.css" />
         <link type="text/css" rel="stylesheet" href="http://images1.jyimg.com/w4/advert/c/jy_ad.css"/>
         <link href="http://images1.jyimg.com/w4/profile_new/c/layer.css" rel="stylesheet" type="text/css" />
@@ -170,9 +170,9 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
         send_jy_pv2('|1017943_4|0');
         send_jy_pv2('|1017943_75|0');
         send_jy_pv2('|1017943_5|');
-        send_jy_pv2('|1017943_6|10000028');
-        send_jy_pv2('|1017943_79|0_10000028');
-                    send_jy_pv2('|1017943_23|10000028');
+        send_jy_pv2('|1017943_6|10000056');
+        send_jy_pv2('|1017943_79|0_10000056');
+                    send_jy_pv2('|1017943_23|10000056');
                 //设置域 为了弹出页面的js操作
         var reg_host_const_flag = 0;
         var reg_host_const_test = 0;
@@ -208,9 +208,9 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                     no_show = 1;
                 //判断是否第一张为方头像，不是则显示第二张照片
         var show_second_photo = 0;
-                                    send_jy_pv2('|1009622_4|10000028');
+                                    send_jy_pv2('|1009622_4|10000056');
                 if(document.location.href.substring(document.location.href.length-7) == "#cp_kpd"){
-                openWindow('','','http://www.jiayuan.com/profile/reliable.php?uid=10000028',570,380);
+                openWindow('','','http://www.jiayuan.com/profile/reliable.php?uid=10000056',570,380);
                 document.location.href = document.location.href + "#1"; 
         }
         function init_chaturl(){
@@ -226,7 +226,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
         init_chaturl();
         //获取感兴趣的人
         function getInterestedMenbers(){
-                var parm = encodeURIComponent('pid:personalmatch_profile_new|count:6|cachesql:3600|sim_uid:10000028');
+                var parm = encodeURIComponent('pid:personalmatch_profile_new|count:6|cachesql:3600|sim_uid:10000056');
                 url = 'http://www.jiayuan.com/ajax/interested.php?r='+Math.random()+'&ad_param[]='+parm;
                 ajax(url, '', getInterestedMenbersCallback);
         }
@@ -332,7 +332,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                         $.ajax({
                                 url: 'http://www.jiayuan.com/profile/dynmatch/ajax/check_photo_pwd.php',
                                 type: 'GET',
-                                data: {uid:10000028,pwd:pwd},
+                                data: {uid:10000056,pwd:pwd},
                                 timeout: 10000,
                                 error: function(){
                                         $('.mmts').html('系统繁忙，请稍后重试！');
@@ -359,7 +359,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 $.ajax({
                                         url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
                                         type: 'GET',
-                                        data: {uid:10000028,id:id,msg_type:msg_type,fxly:''},
+                                        data: {uid:10000056,id:id,msg_type:msg_type,fxly:''},
                                         timeout: 10000,
                                         error: function(){
                                                 $("#mmtc_ts").html("系统繁忙");
@@ -404,7 +404,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 send_jy_pv2('|1017943_18|0');
                                 send_jy_pv2('|1017943_19|');
                                 send_jy_pv2('|1017943_76|0');
-                                send_jy_pv2('|1017943_80|0_10000028');
+                                send_jy_pv2('|1017943_80|0_10000056');
                                 $(".zpfxts").hide();
                                 $('#zptc_fx_form').submit();
                                 $("#zptc_fxan").html('已发送');
@@ -412,7 +412,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 /*$.ajax({
                                         url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
                                         type: 'GET',
-                                        data: {uid:10000028,msg_value:msg_val,msg_type:msg_type,fxly:''},
+                                        data: {uid:10000056,msg_value:msg_val,msg_type:msg_type,fxly:''},
                                         timeout: 10000,
                                         error: function(){
                                                 $("#zptc_ts").html("系统繁忙");
@@ -451,7 +451,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 $.ajax({
                                         url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
                                         type: 'GET',
-                                        data: {uid:10000028,id:id,msg_type:msg_type,fxly:''},
+                                        data: {uid:10000056,id:id,msg_type:msg_type,fxly:''},
                                         timeout: 10000,
                                         error: function(){
                                                 a_obj.html('--').unbind();
@@ -496,7 +496,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 $.ajax({
                                         url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
                                         type: 'GET',
-                                        data: {uid:10000028,id:id,msg_type:3,fxly:''},
+                                        data: {uid:10000056,id:id,msg_type:3,fxly:''},
                                         timeout: 10000,
                                         error: function(){
                                                 a_obj.append('<font class="tip7_a">发送失败，请重试</font>');
@@ -547,7 +547,7 @@ Set-Cookie: SESSION_HASH=a13c85b67cebcffcc643aa0b75943e8f17b0940c; expires=Sat, 
                                 $.ajax({
                                         url: 'http://www.jiayuan.com/profile/dynmatch/ajax/send_msg.php',
                                         type: 'GET',
-                                        data: {uid:10000028,id:id,msg_type:3,fxly:''},
+                                        data: {uid:10000056,id:id,msg_type:3,fxly:''},
                                         timeout: 10000,
                                         success: function(data){
                                                 if(data == 1){
@@ -581,7 +581,7 @@ function add_follow(type){
 function if_show_pic(type){
         /**点击的是头像的部分**/
        if(type == 1){
-                                    window.open("http://www.jiayuan.com/invite.php?uidhash=36c31dcfe30545b48532b2d74588c875&type=15");return false;
+                                    window.open("http://www.jiayuan.com/invite.php?uidhash=d702b52e45eacdf7644583cc704cf2ca&type=15");return false;
                       }
                  loginWindow.openlogindiv('login',location.href, function(){location.reload();});return false;
      }
@@ -647,7 +647,7 @@ function hf_wa(){
 //获取关注的人
 function get_gz_people(){
 	get_gz_people_num();
-	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans.php?uid=10000028','',function(data){ 
+	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans.php?uid=10000056','',function(data){ 
 				if(data != -1){
 			$("#gz_people ul").html(data);
 			$("#gz_people img").each(function (i, ele) {
@@ -680,7 +680,7 @@ function get_gz_people(){
 }
 //获取关注的人数
 function get_gz_people_num(){
-	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans_count.php?uid=10000028','',function(data){ 
+	ajax('http://www.jiayuan.com/profile/dynmatch/ajax/get_fans_count.php?uid=10000056','',function(data){ 
 		if(data == 0){
 						$("#gz_people_a").html("关注");
 					}else{
@@ -689,7 +689,28 @@ function get_gz_people_num(){
 	});
 }
 $(function() {
-                    $('#opa_70').css({
+                 
+		$('#mmfs').unbind().click(function(){
+			send_msg(65,1);
+		});
+		$('#zptc_fxan').unbind().click(function(){
+			send_msg(0,2);
+		});
+		$(".info_null").hover(function(){
+                        			$(this).html('<a onclick="loginWindow.openlogindiv(\'login\',location.href, function(){location.reload();});" style="cursor:pointer" class="col_blue">我想知道</a>');
+					},function(){
+			$(this).html('--');
+		});
+							$("#yqbcjwnl").unbind().click(function(){
+								loginWindow.openlogindiv('login',location.href, function(){location.reload();});
+							});
+							$("#yqbcycw").unbind().click(function(){
+								loginWindow.openlogindiv('login',location.href, function(){location.reload();});
+							});
+															$("#yqbcgx").unbind().click(function(){
+								loginWindow.openlogindiv('login',location.href, function(){location.reload();});
+							});
+			    $('#opa_70').css({
         'height' : document.documentElement.scrollHeight
     });
 	$("#pSmallImg img").each(function (i, ele) {
@@ -751,7 +772,7 @@ function jump_to_fate()
 
 function fate_page()
 {
-    window.location.href="http://www.jiayuan.com/fate/myfate.php?hash=c336cf1d05e3b4453285d7b2884575c8&show=2";
+    window.location.href="http://www.jiayuan.com/fate/myfate.php?hash=02d72eb5ea45f7cd4564cc834c70caf2&show=2";
 }
 
 
@@ -886,8 +907,8 @@ loginWindow.onOpen = function(){
             <div class="main_1000 fn-clear">
                 <ul class="nav_l">
                     <li class="cur"><a href="javascript:;">他的资料</a></li>
-                    <li style="display:none;"><a onclick="if(!if_show_pic()){return false;}" href="http://photo.jiayuan.com/showphoto.php?uid_hash=36c31dcfe30545b48532b2d74588c875&tid=0&cache_key=" target="_blank">他的照片</a></li>
-                    <li><a href="http://www.jiayuan.com/more_gift.php?uid=10000028&tid=0&cache_key=" target="_blank" onmousedown="send_jy_pv2('|1017864_0|');send_jy_pv2('|1017864_1|0');">他的礼物</a></li>
+                    <li style="display:none;"><a onclick="if(!if_show_pic()){return false;}" href="http://photo.jiayuan.com/showphoto.php?uid_hash=d702b52e45eacdf7644583cc704cf2ca&tid=0&cache_key=" target="_blank">他的照片</a></li>
+                    <li><a href="http://www.jiayuan.com/more_gift.php?uid=10000056&tid=0&cache_key=" target="_blank" onmousedown="send_jy_pv2('|1017864_0|');send_jy_pv2('|1017864_1|0');">他的礼物</a></li>
                                     </ul>
                 <!--自己看自己-->
                                        <div class="nav_next"><a href="javascript:loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_4|');send_jy_pv2('|1017864_5|0');">下一个有缘人</a></div>
@@ -916,7 +937,7 @@ loginWindow.onOpen = function(){
                                                   <li style="overflow:hidden;">
                                                     <table cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td align="center" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_6|');send_jy_pv2('|1017864_7|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=36c31dcfe30545b48532b2d74588c875"><img class="img_absolute" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"/></a></td>
+                                                            <td align="center" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_6|');send_jy_pv2('|1017864_7|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=d702b52e45eacdf7644583cc704cf2ca"><img class="img_absolute" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"/></a></td>
                                                         </tr>
                                                     </table>            
                                                 </li>
@@ -926,7 +947,7 @@ loginWindow.onOpen = function(){
                                     <a class="prev"></a>
                                     <div class="small_pic fn-clear">
                                         <ul>
-                                                 <li  class="now"  style="overflow:hidden;position: relative;" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_8|');send_jy_pv2('|1017864_9|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=36c31dcfe30545b48532b2d74588c875"><img class="img_absolute_list" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_sp.jpg"/></a></li>
+                                                 <li  class="now"  style="overflow:hidden;position: relative;" onclick="if(!if_show_pic(1)){return false;}"><a onmousedown="send_jy_pv2('|1017864_8|');send_jy_pv2('|1017864_9|0');" target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=d702b52e45eacdf7644583cc704cf2ca"><img class="img_absolute_list" style="position: absolute;height: 31px;width: 31px;" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_sp.jpg"/></a></li>
                                                                                      </ul>
                                     </div>
                                      <a class="next"></a> 
@@ -970,7 +991,7 @@ loginWindow.onOpen = function(){
                             <a target="_blank" onmousedown="send_jy_pv2('|1017864_12|');send_jy_pv2('|1017864_13|0');" href="http://www.jiayuan.com/meilistar/"><h6>0</h6>
                             <p>魅力值</p></a>
                         </div>
-                                                         <h4>◆悲傷罘斷。<span>ID:10000028</span></h4>
+                                                         <h4>じ牛メ仔い<span>ID:10000056</span></h4>
                                                 <p class="member_ico_box">会员身份：<span class="member_dj">普通会员</span></p>
                         <p class="member_ico_box">诚信等级：<span class="star_ico">
 			
@@ -987,7 +1008,7 @@ loginWindow.onOpen = function(){
                                                                 <a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_28|');send_jy_pv2('|1017864_29|0');" class="col_blue_1">[ 查看靠谱度 ]</a></p>
                         <!--<p class="member_ico_box">诚信等级：<span class="star_ico"></span><span class="member_ico"><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico1.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico2.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico3.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico4.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico5.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico6.png" alt=""/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico7.png" alt=""/></span><span class="wt_ico"><a href="#"><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/member_ico8.png" alt=""/></a></span><a href="#" class="col_blue_1">[ 查看靠谱度 ]</a></p>-->
                         <p class="col_999">认证信息是会员自愿提供，目前中国无完整渠道确保100%真实，请理性对待。</p>
-                        <h6 class="member_name">26岁，未婚，来自江西上饶</h6>
+                        <h6 class="member_name">29岁，未婚，来自广东广州</h6>
                          <ul class="member_info_list fn-clear">
                             <li>
                                 <div class="fl f_gray_999">学历：</div>
@@ -998,7 +1019,7 @@ loginWindow.onOpen = function(){
                             <li>
                                 <div class="fl f_gray_999">身高：</div>
                                     <div class="fl pr">
-                                    <em>165cm</em>
+                                    <em>172cm</em>
                                 </div>
                             </li>
                             <li>
@@ -1019,39 +1040,41 @@ loginWindow.onOpen = function(){
                             <li>
                                 <div class="fl f_gray_999">体重：</div>
                                     <div class="fl pr">
-                                    <em  class="info_null" msg_id="7"  >--</em>
+                                    <em  >70公斤</em>
                                 </div>
                             </li>
                             <li>
                                 <div class="fl f_gray_999">星座：</div>
                                     <div class="fl pr">
-                                    <em>水瓶座</em>
+                                    <em>天蝎座</em>
                                 </div>
                             </li>
                             <li>
                                  <div class="fl f_gray_999">民族：</div>
                                     <div class="fl pr">
-                                    <em  class="info_null" msg_id="4"  >--</em>
+                                    <em  >汉族</em>
                                 </div>
                             </li>
                             <li>
                                 <div class="fl f_gray_999">属相：</div>
                                     <div class="fl pr">
-                                    <em>龙</em>
+                                    <em>牛</em>
                                 </div>
                             </li>
                             <li>
                                 <div class="fl f_gray_999">血型：</div>
                                     <div class="fl pr">
-                                    <em  class="info_null" msg_id="3"  >--</em>
+                                    <em  >B型</em>
                                 </div>
                             </li>
                         </ul>
-                                                                                    <div class="fn-clear mt22">
-                                                                                <p class="appointment_txt">我的征友状态：找到意中人。谢谢关注！</p>
-                                                                                                <p><a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});"  > </a></p>
-                                                                                                                </div>
-                                                                        </div>
+                                                                                                                        <div class="fn-clear mt15"> 
+                                        <a class="member_btn1" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_20|');send_jy_pv2('|1017864_21|0');send_jy_pv2('|1017943_76|0');send_jy_pv2('|1017943_80|0_10000056');send_jy_pv2('|1017869_20|');send_jy_pv2('|1017869_21|0');">发信</a>
+                                        <a class="member_btn2" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_22|');send_jy_pv2('|1017864_23|0');send_jy_pv2('|1017943_76|0');send_jy_pv2('|1017943_80|0_10000056');send_jy_pv2('|1017869_22|');send_jy_pv2('|1017869_23|0');">打招呼</a>
+                                        <a class="member_btn3" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_24|');send_jy_pv2('|1017864_25|0');">送礼物</a>
+                                        <a class="member_btn3" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017864_30|');send_jy_pv2('|1017864_31|0');">加关注</a>
+                                    </div>
+                                                                                                        </div>
                     <!--信息  end--> 
                 </div>
                 <!--会员信息 end --> 
@@ -1059,9 +1082,12 @@ loginWindow.onOpen = function(){
                 <!--广告 start -->
                 <div class="banner_box yh">
                         <div class="slide_banner" id="ad_pos_11"></div>
-                                                                                        <div style="display:none;" class="jb_text col_999"> 
+                                                                                                                                                                                                               <div class="ems_bg col_blue">
+                                                                  <a target="_blank" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" class="col_blue">喜欢他就发特快专递&gt;&gt;</a>
+                                                        </div>
+                                                                                                                                                                <div  class="jb_text col_999"> 
                                     <a style="cursor:pointer" onclick="show_photo_lj_tc(13);return false;" onmousedown="send_jy_pv2('|1017864_32|');send_jy_pv2('|1017864_33|0');">推荐</a>&nbsp;&nbsp;&nbsp;｜
-                                    <a onmousedown="send_jy_pv2('|1017864_34|');send_jy_pv2('|1017864_35|0');" href="http://www.jiayuan.com/complain/?uid_hash=36c31dcfe30545b48532b2d74588c875&old=1" target="_blank">举报</a> 
+                                    <a onmousedown="send_jy_pv2('|1017864_34|');send_jy_pv2('|1017864_35|0');" href="http://www.jiayuan.com/complain/?uid_hash=d702b52e45eacdf7644583cc704cf2ca&old=1" target="_blank">举报</a> 
                                 </div>
                                         </div>
                 <!--广告 end --> 
@@ -1075,15 +1101,17 @@ loginWindow.onOpen = function(){
             <div class="content_705"> 
                 <!--打招呼跟随层 start -->
                 <div class="member_layer">
-                    <div class="fl pic80" onclick="if(!if_show_pic(1)){return false;}"><a target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=36c31dcfe30545b48532b2d74588c875"><img class="img_absolute_b" id="gs_ava" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"></a></div>
+                    <div class="fl pic80" onclick="if(!if_show_pic(1)){return false;}"><a target="_blank" href="http://photo.jiayuan.com/showphoto.php?uid_hash=d702b52e45eacdf7644583cc704cf2ca"><img class="img_absolute_b" id="gs_ava" src="http://images1.jyimg.com/w4/parties/app/yfsp/i/loading.gif" _src="http://images1.jyimg.com/w4/profile/i/photo_invite_m_bp.jpg"></a></div>
                     <div class="member_layer_con yh">
-                        <h4>◆悲傷罘斷。<span>江西上饶，26岁，165CM，未婚</span></h4>
+                        <h4>じ牛メ仔い<span>广东广州，29岁，172CM，未婚</span></h4>
                          
-                                                                        <div class="fn-clear">
-                                                                                                        <p class="appointment_txt">我的征友状态：找到意中人。谢谢关注！</p>
-                                                                                                                        <p><a style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});"  > </a></p>
-                                                                                                                                                </div>
-                                                                          </div>
+                                                                                                                        <div class="fn-clear">
+                                                      <a class="member_btn1" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017867_10|');send_jy_pv2('|1017867_11|0');send_jy_pv2('|1017943_76|0');send_jy_pv2('|1017943_80|0_10000056');send_jy_pv2('|1017869_20|');send_jy_pv2('|1017869_21|0');">发信</a>
+                                                      <a class="member_btn2" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017867_12|');send_jy_pv2('|1017867_13|0');send_jy_pv2('|1017943_76|0');send_jy_pv2('|1017943_80|0_10000056');send_jy_pv2('|1017864_22|');send_jy_pv2('|1017869_22|');send_jy_pv2('|1017869_23|0');">打招呼</a>
+                                                      <a class="member_btn3" style="cursor:pointer" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});" onmousedown="send_jy_pv2('|1017867_14|');send_jy_pv2('|1017867_15|0');">送礼物</a>
+                                                      <a class="member_btn3" style="cursor:pointer" onmousedown="send_jy_pv2('|1017867_34|');send_jy_pv2('|1017867_35|0');" onclick="loginWindow.openlogindiv('login',location.href, function(){location.reload();});">加关注</a>
+                                                 </div>
+                                                                                                                   </div>
 
                 </div>
                 <!--打招呼跟随层 end -->
@@ -1092,7 +1120,7 @@ loginWindow.onOpen = function(){
                     <div class="js_box">
                                                         <h4>自我介绍</h4>
                                                 <div class="js_text">
-                            　　这个世界上，总有一个人在等你，总有一个人会给你安心的幸福，总有一个人会陪你到老，这个人，要珍惜，要感恩。你是我要找的幸福吗？
+                            　　感谢那些浏览我的资料的人，感谢那些关注我的人，感谢那些给我带来爱情希望的人，在世纪佳缘，在寻找缘分的旅途上，我走得并不孤单。而最应该感谢的，就是你，我未来的所爱，我相信你一定在这里，在一个我还不曾到达的角落，在一个我们的目光不曾交汇的地方。
                         </div>
                     </div>
                 </div>
@@ -1101,11 +1129,22 @@ loginWindow.onOpen = function(){
                 <!--dna start -->
                 <!--自己看自己-->
                                         <!--浏览同性或者未登录浏览-->    
-                                                <div class="bg_white fn-clear mt15"  style="display:none;"  >
+                                                <div class="bg_white fn-clear mt15"  >
                              <div class="zl_DNA_a zl_DNA_b">
                                  <h3><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/DNA_icon.gif"/><img src="http://images1.jyimg.com/w4/profile_new2/i/personal/DNA_text_1.gif"/>爱情DNA</h3>
                                  <div class="DNA_xq">
-                                                                      </div>
+                                                                                 <!--<div class="DNA_xq_more"><a target="_blank" onmousedown="send_jy_pv2('|1017879_10|');send_jy_pv2('|1017879_11|0');" href="http://www.jiayuan.com/usercp/profile.php?action=interest">完善更多兴趣爱好</a></div>-->
+                                            <h5>他的兴趣爱好：</h5>
+                                            <div class="list_a fn-clear">
+                                                <ul>
+                                                                                                                                                                                                                         <li  title="爱好" class="ah DNA_tags"><span title="爱好"></span>体育运动</li>
+                                                                                                                      <li  title="爱好" class="ah DNA_tags"><span title="爱好"></span>旅游</li>
+                                                                                                                      <li  title="爱好" class="ah DNA_tags"><span title="爱好"></span>电子游戏</li>
+                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                            </div>
+                                            <div class="d_more DNA_xq_more"  style="display:none;"  ><a onmousedown="send_jy_pv2('|1017867_40|');send_jy_pv2('|1017867_41|0');" href="javascript:;"><strong class="test2">更多</strong></a></div>
+                                                                        </div>
                                                                   <div class="DNV_rr">
                                      <h6>以上内容由<span class="blue bg"> <a href="http://www.jiayuan.com/wenda" onmousedown="send_jy_pv2('|1017996_2|');" target="_blank">懂你</a></span>根据<b class="blue"><a href="http://www.jiayuan.com/wenda" onmousedown="send_jy_pv2('|1017996_2|');" target="_blank">个性匹配问答</a></b>生成</h6>
                                  </div>
@@ -1140,9 +1179,42 @@ loginWindow.onOpen = function(){
                     <div class="js_box">
                         <h4>生活方式</h4>
                                                         <h6 class="yh">嗜好习惯</h6>
-                                                                        <ul class="js_list fn-clear">
-                                                                                                    <p class="col_999">未填</p>
-                                                                                    </ul>    
+                                                                            <ul class="js_list fn-clear">
+                                <li class="fn-clear">
+                                    <span>吸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;烟：</span>
+                                    <div class="ifno_r_con"><em  >社交时偶尔吸</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>饮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;酒：</span>
+                                    <div class="ifno_r_con"><em  >社交需要时喝</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>锻炼习惯：</span>
+                                    <div class="ifno_r_con"><em  >每周至少一次</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>饮食习惯：</span>
+                                    <div class="ifno_r_con"><em  class="info_null" msg_id="15"  >--</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>逛街购物：</span>
+                                    <div class="ifno_r_con"><em class="info_null" msg_id="16"  >--</em></div>
+                                <li class="fn-clear">
+                                    <span>宗教信仰：</span>
+                                   <div class="ifno_r_con"><em  >基督教天主教派</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>作息时间：</span>
+                                    <div class="ifno_r_con"><em  >偶尔懒散一下</em></div>
+                                </li>
+                                <li class="fn-clear">
+                                    <span>交际圈子：</span>
+                                    <div class="ifno_r_con"><em  class="info_null" msg_id="19"  >--</em></div>
+                                <li class="fn-clear">
+                                    <span>最大消费：</span>
+                                   <div class="ifno_r_con"><em  >休闲娱乐</em></div>
+                                </li>
+                            </ul>
                                                 <div class="pt25 fn-clear">
                             <div class="js_tit yh">家务</div>
                             <div class="choice_box pr15 fn-clear">
@@ -1226,12 +1298,54 @@ loginWindow.onOpen = function(){
                         <h4>工作学习</h4>
                                                          <h6 class="yh">工作</h6>
                                                 <ul class="js_list fn-clear">
-                                                                                                                                                        <li class="col_999">未填</li>
-                                                                                                                                     </ul>
+                                                                <li class="fn-clear">
+                                        <span>职业职位：</span>
+                                        <div class="ifno_r_con"><em  >生产/加工/制造</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>公司行业：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="31"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>公司类型：</span>
+                                        <div class="ifno_r_con"><em  >外企企业 </em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>福利待遇：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="33"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>工作状态：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="34"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>调动工作可能性：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="35"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>事业与家庭：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="37"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>海外工作可能性：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="36"  >--</em></div>
+                                    </li>
+                                                     </ul>
                                                         <h6 class="yh">学习</h6>
                                                 <ul class="js_list fn-clear">
-                                                                					                                                <li class="col_999">未填</li>
-					                                                                                        </ul>
+                                                                <li class="fn-clear">
+                                        <span>毕业院校：</span>
+                                        <div class="ifno_r_con"><em  >茂名学院</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>专业类型：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="40"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>语言能力：</span>
+                                        <div class="ifno_r_con_1"><em  class="info_null" msg_id="41"  >--</em></div>
+                                    </li>
+                                                    </ul>
                     </div>
                 </div>
                 <!--工作学习 end --> 
@@ -1247,11 +1361,11 @@ loginWindow.onOpen = function(){
                             </li>
                             <li class="fn-clear">
                                 <span>户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;口：</span>
-                                <div class="ifno_r_con"><em  class="info_null" msg_id="2"  >--</em></div>
+                                <div class="ifno_r_con"><em  >广东茂名</em></div>
                             </li>
                             <li class="fn-clear">
                                 <span>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</span>
-                                <div class="ifno_r_con"><em  >中国</em></div>
+                                <div class="ifno_r_con"><em  >中国大陆</em></div>
                             </li>
                             <li class="fn-clear">
                                 <span>个性待征：</span>
@@ -1271,7 +1385,7 @@ loginWindow.onOpen = function(){
                             </li>
                             <li class="fn-clear">
                                 <span>是否要小孩：</span>
-                                <div class="ifno_r_con"><em  class="info_null" msg_id="49"  >--</em></div>
+                                <div class="ifno_r_con"><em  >想要孩子</em></div>
                             </li>
                             <li class="fn-clear">
                                 <span>何时结婚：</span>
@@ -1288,8 +1402,35 @@ loginWindow.onOpen = function(){
                         </ul>
                                                         <h6 class="yh mt5">关于家庭</h6>
                                                 <ul class="js_list fn-clear">
-                                                                                                                                                            <p class="col_999">未填</p>
-                                                                                                                                    </ul>
+                                                                <li class="fn-clear">
+                                        <span>愿与对方父母同住：</span>
+                                        <div class="ifno_r_con"><em  >愿意</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>家中排行：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="55"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>父母情况：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="57"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>兄弟姐妹：</span>
+                                        <div class="ifno_r_con"><em class="info_null" msg_id="56">--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>父母经济情况：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="59"  >--</em></div>
+                                    </li>
+                                    <li class="fn-clear">
+                                        <span>父母医保情况：</span>
+                                        <div class="ifno_r_con"><em  class="info_null" msg_id="60"  >--</em></div>
+                                    </li>
+                                     <li class="fn-clear">
+                                        <span>父母的工作：</span>
+                                        <div class="ifno_r_con_1"><em class="info_null" msg_id="58">--</em></div>
+                                    </li>
+                                                     </ul>
                     </div>
                 </div>
                 <!--婚姻观念 end --> 
@@ -1481,8 +1622,8 @@ loginWindow.onOpen = function(){
                                 <!--可能感兴趣的人end--> 
 
                 <!--礼物推荐start-->
-                <h2 class="slidebar_tit pt20"> <a class="col_blue"  href="javascript:getCommendGift(10000028);" onmousedown="send_jy_pv2('|1017867_28|');send_jy_pv2('|1017867_29|0');">换一组</a> 礼物推荐 </h2>
-                <div id="gift_commend"><img src="http://images1.jyimg.com/w4/profile_new/i/loading_min.gif" /><script type="text/javascript">getCommendGift(10000028);</script></div>
+                <h2 class="slidebar_tit pt20"> <a class="col_blue"  href="javascript:getCommendGift(10000056);" onmousedown="send_jy_pv2('|1017867_28|');send_jy_pv2('|1017867_29|0');">换一组</a> 礼物推荐 </h2>
+                <div id="gift_commend"><img src="http://images1.jyimg.com/w4/profile_new/i/loading_min.gif" /><script type="text/javascript">getCommendGift(10000056);</script></div>
                 <!--礼物推荐end--> 
 
                 <!--推荐服务start-->
@@ -1547,9 +1688,9 @@ loginWindow.onOpen = function(){
                 <div class="tip5" id="tjhy_ts"></div>
                 <div class="pop_colsed" onclick="close_photo_lj_tc(3);" title="关闭"></div>
                 <div class="pl20 pt25">
-                    <h6 class="f_20 yh">将◆悲傷罘斷。推荐给好友</h6>
-                    <p class="f14 f_gray_666 pt5 pb10">觉得◆悲傷罘斷。不错，复制以下链接发送给好友吧！</p>
-                    <p class="f14 f_gray_666 pt5 pb10">征友地址：<input type="text" class="tj-input" id="zydz" value="http://www.jiayuan.com/10000028" /></p>
+                    <h6 class="f_20 yh">将じ牛メ仔い推荐给好友</h6>
+                    <p class="f14 f_gray_666 pt5 pb10">觉得じ牛メ仔い不错，复制以下链接发送给好友吧！</p>
+                    <p class="f14 f_gray_666 pt5 pb10">征友地址：<input type="text" class="tj-input" id="zydz" value="http://www.jiayuan.com/10000056" /></p>
                     <span class="tjts"></span>
                     <a class="btn_4 mr" id="copy_an" style="cursor:pointer">复制</a>
                 </div>
@@ -1580,7 +1721,7 @@ loginWindow.onOpen = function(){
                     <textarea name="" cols="" rows="" disabled="disabled" class="pop_msg_btn">你是我心仪的类型，很想知道你的庐山真面目，可以告诉我你照片的爱情密码吗？</textarea>
                 </div>
                  
-                                <span class="mmtxts">对方为成功会员，请联系其他异性会员。</span>
+                                <a class="btn_4 fl" id="mmfs" style="cursor:pointer">发送</a>
                                             </div>
         </div>
         <!--/密码弹层-->
