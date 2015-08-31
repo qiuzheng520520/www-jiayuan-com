@@ -4,7 +4,7 @@ CC=gcc
 INC=/home/qz/test/www-jiayuan-com/db/include/
 LIB=/home/qz/test/www-jiayuan-com/db/lib/
 lib=sqlite3
-CFLAGS=-I$(INC) -L$(LIB) -l$(lib)
+CFLAGS=-g -I$(INC) -L$(LIB) -l$(lib)
 
 all:db_test
 

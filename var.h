@@ -23,6 +23,7 @@ struct var req_args[]={
 	{"佳缘ID:",	"）",	"佳缘ID:",	"）"},				//1.	//ID
 	{"member_name","岁","member_name\">","岁"},				//2.		//年龄
 	{"岁，","，","岁，","，"},							//3.	//婚否
+#if 1
 	{"来自","</h6>","来自","</h6>"},				//4.	//地区
 	{"学历","</em>","学历：</div>\
                                     <div class=\"fl pr\">\
@@ -42,7 +43,7 @@ struct var req_args[]={
 	{"属相","</em>","属相：</div>\
                                     <div class=\"fl pr\">\
                                         <em>","</em>"},			//10.		//属相
-	{"自我介绍</h4>","</div>","自我介绍</h4>\
+	{"自我介绍<","</div>","自我介绍</h4>\
                                                 <div class=\"js_text\">\
                             　　","</div>"},				//11.	//自我介绍
 	{"爱好\"></span>","</li>","爱好\"></span>","</li>"},			//12.		//爱好
@@ -51,11 +52,12 @@ struct var req_args[]={
 	{"公司行业","</em>","公司行业：</span>\
 		                                        <div class=\"ifno_r_con\"><em  class=\"info_null\" msg_id=\"31\"  >","</em>"},			//14.		//公司行业
 	{"公司类型","</em>","公司类型：</span>\
-		                                        <div class=\"ifno_r_con\"><em  class=\"info_null\" msg_id=\"32\"  >","</em>"},			//15.		//公司类型
+                                         <div class=\"ifno_r_con\"><em  >","</em>"},			//15.		//公司类型
 	{"毕业院校","</em>","毕业院校：</span>\
 		                                        <div class=\"ifno_r_con\"><em  >","</em>"},			//16.		//毕业学校
 	{"专业类型","</em>","专业类型：</span>\
 		                                        <div class=\"ifno_r_con\"><em  class=\"info_null\" msg_id=\"40\"  >","</em>"},			//17.		//专业类型
+#endif
 };
 
 struct result_str{
@@ -79,6 +81,7 @@ struct result_str{
 	char professional[40];	//17.		//专业
 };
 
-#define SQL_CREATE_TABLE "CREATE TABLE test_tb (id varchar(20),	net_name varchar(40), age varchar(20), marray varchar(40), aray varchar(40),study varchar(40), high varchar(20), hight	varchar(20), star varchar(20), nation varchar(40), zodiac varchar(20), hobbies varchar(20), position varchar(20), company varchar(20), company_type varchar(20),school varchar(40), professional varchar(40), explain varchar(4096))"
+#define SQL_CREATE_TABLE "CREATE TABLE test_tb(net_name varchar(40), id varchar(40), age varchar(40), marray varchar(40), aray varchar(40),study varchar(40), high varchar(40), hight	varchar(40), star varchar(40), nation varchar(40), zodiac varchar(40), explain varchar(4096), hobbies varchar(40), position varchar(40), company varchar(40), company_type varchar(40),school varchar(40), professional varchar(40))"
+//#define SQL_CREATE_TABLE "CREATE TABLE test_tb(net_name varchar(40), id varchar(40), age varchar(40), marray varchar(40))"
 
 

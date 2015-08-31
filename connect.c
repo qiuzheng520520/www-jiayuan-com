@@ -69,13 +69,18 @@ int create_db_file()
 
 	memset(sql, 0, 128);  
 	//sprintf(sql, "%s%s%s", "create table ",	"test_tb",	"(id INTEGER PRIMARY KEY, data TEXT)");  
-	rt = sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
+	//rt = sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
+	rt = sqlite3_exec(db, "create table test_tb(id varchar(40),name varchar(40),sex varchar(40),age varchar(40))", NULL, NULL, NULL);  
 	qz_printf("rt==%d\n",rt);
 	return 0;
 }
 int write_db(char *sql)
 {
 	sqlite3_exec(db, sql, NULL, NULL, NULL);  
+	//sqlite3_exec(db, "insert into test_tb values('111','222','333','444')", NULL, NULL, NULL);  
+	printf("insert test_db ok!\n");
+
+	return 0;
 }
 #endif
 #if 1
@@ -191,7 +196,7 @@ int insert_array(struct result_str* str,char *p[])
 }
 
 int no_date;
-char sql_buff[1*1024*1024];
+//char sql_buff[1*1024*1024];
 //struct result_str result_str_buff;
 char p_str[20][4*1024];
 int do_things(int rfd)
@@ -199,10 +204,12 @@ int do_things(int rfd)
 	int rd;
 	char *p,*f,*e;
 	int i,num;
-	char var_buf[100],seg_buf[100];
+	char var_buf[1024],seg_buf[100];
 	char buff[100];
 	int str_len;
 
+	char *sql_buff = malloc(8*1024);
+	memset(sql_buff,0,sizeof(sql_buff));
 	qz_printf("haha\n");
 	//qz_printf("%s",html_buff);
 	memset(res_buff,0,sizeof(res_buff));
@@ -210,16 +217,11 @@ int do_things(int rfd)
 	sprintf(res_buff,"%d:",no_date);
 	num = sizeof(req_args)/sizeof(struct var);
 	f = html_buff;
-#ifdef DB_FILE
-	//struct result_str result_str_buff;
-	//char *p_str[50];
-	//memset(&result_str_buff,0,sizeof(struct result_str));
-	//insert_array(&result_str_buff,p_str);
-#endif
+
+//	num = 12;
 	for(i=0; i< num; i++)
 	{
 		qz_printf("i == %d\n",i);
-		//f = strstr(f,req_args[i].front);
 		f = strstr(html_buff,req_args[i].front);
 		qz_printf("f:%d\n",f-html_buff);
 		if(f <= 0)
@@ -234,6 +236,7 @@ int do_things(int rfd)
 		p = f + strlen(req_args[i].f_str);
 
 		str_len = e - f - strlen(req_args[i].f_str);
+		memset(var_buf,0,1024);
 		memcpy(var_buf, p, str_len);
 		var_buf[str_len] = 0;
 		
@@ -250,30 +253,39 @@ int do_things(int rfd)
 		qz_printf("f:%d\n",f-html_buff);
 
 #ifdef DB_FILE
-		memcpy(p_str[i],var_buf,strlen(var_buf));	
+		memcpy(&p_str[i],var_buf,strlen(var_buf));	
 #endif
 	}
-	res_buff[strlen(res_buff)] = '\n';
+//	res_buff[strlen(res_buff)] = '\n';
 //	qz_printf("%s\n",res_buff);
 	printf("ok\n");
 
 #ifdef DB_FILE
 	//for(i=0; i<num; i++)
 	//{	printf("%d:%s\n",i,p_str[i]);}
-	//qz_printf("hehe\n");
+	qz_printf("hehe\n");
 	sprintf(sql_buff,"%s","INSERT INTO \"test_tb\" VALUES(");
-	strcat(sql_buff,p_str);
+	memcpy(&sql_buff[strlen(sql_buff)],p_str,strlen(p_str));
+	//printf("%s\n",sql_buff);
+	char CR[]={0x0D,0x0A,0};
 	for(i=1;i<num;i++)
-	{	strcat(sql_buff,",");strcat(sql_buff,p_str+i);}
-	strcat(sql_buff,")");
-	//sprintf(sql_buff,"INSERT INTO \"test_tb\" VALUES( \'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",p_str+0,p_str+1,p_str+2,p_str+3,p_str+4,p_str+5,p_str+6,p_str+7,p_str+8,p_str+9,p_str+10,p_str+12,p_str+13,p_str+14,p_str+15,p_str+16,p_str+17,p_str+11);
-	qz_printf(sql_buff);
-	qz_printf("\n");
+	{	
+		if(i == 11)
+		{
+			if((p = strstr(p_str+i,CR)) > 0)
+				*p = 0;
+		}
+		sql_buff[strlen(sql_buff)] = ',';
+		memcpy(&sql_buff[strlen(sql_buff)],p_str+i,strlen(p_str+i));
+	}
+	sql_buff[strlen(sql_buff)] = ')';
+	qz_printf("%s\n",sql_buff);
 	rd = write_db(sql_buff);
 #else
 	rd = write(rfd,res_buff,strlen(res_buff));
 #endif
 
+	free(sql_buff);
 	return rd;
 }
 
@@ -344,11 +356,13 @@ int main(int argc, char **argv)
 					goto write_start_no;
 				}
 				do_things(rfd);
+				printf("111111\n");
 				close(cfd);
 write_start_no:
 				sprintf(id_buff,"%d            ",start_num + i);
 				lseek(nfd,0,SEEK_SET);
 				write(nfd,id_buff,strlen(id_buff));
+				printf("22222\n");
 			}
 
 #ifdef DB_FILE
