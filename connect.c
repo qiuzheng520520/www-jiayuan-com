@@ -227,7 +227,7 @@ int do_things(int rfd)
 		qz_printf("i == %d\n",i);
 		f = strstr(html_buff,req_args[i].front);
 		qz_printf("f:%d\n",f-html_buff);
-		if(f <= 0)	{ memcpy(p_str[i],"\'---\'",strlen(var_buf));continue; }
+		if(f <= 0)	{ memcpy(&p_str[i][0],"\'---\'",strlen("\'---\'"));continue; }
 		if(i < 5)
 		{
 			e = strstr(f+strlen(req_args[i].f_str),req_args[i].end);
