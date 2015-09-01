@@ -263,8 +263,8 @@ int do_things(int rfd)
 	//	p_str[i][0] = "\"";
 	//	memcpy(&(p_str[i][1]),var_buf,strlen(var_buf));	
 	//	p_str[i][strlen(var_buf)+1] = "\"";
-		memset(&p_str[i][0],0,4*1024);
-		sprintf(&p_str[i][0],"\'%s\'",var_buf);
+		memset(&p_str[i],0,4*1024);
+		sprintf(&p_str[i],"\'%s\'",var_buf);
 #endif
 	}
 //	res_buff[strlen(res_buff)] = '\n';
@@ -275,20 +275,20 @@ int do_things(int rfd)
 	//for(i=0; i<num; i++)
 	//{	printf("%d:%s\n",i,p_str[i]);}
 	qz_printf("hehe\n");
-	memset(sql_buff,0,sizeof(sql_buff));
+	memset(sql_buff,0,8*1024);
 	sprintf(sql_buff,"%s","INSERT INTO \"test_tb\" VALUES(");
-	memcpy(&sql_buff[strlen(sql_buff)],p_str,strlen(p_str));
-	//printf("%s\n",sql_buff);
+	memcpy(&sql_buff[strlen(sql_buff)],&p_str[0],strlen(p_str[0]));
+//	printf("%s\n",sql_buff);
 	char CR[]={0x0D,0x0A,0};
 	for(i=1;i<num;i++)
 	{	
 		if(i == 11)
 		{
-			if((p = strstr(p_str+i,CR)) > 0)
+			if((p = strstr(&p_str[i][0],CR)) > 0)
 			{*p='\'';*(p+1)= 0;}
 		}
 		sql_buff[strlen(sql_buff)] = ',';
-		memcpy(&sql_buff[strlen(sql_buff)],p_str+i,strlen(p_str+i));
+		memcpy(&sql_buff[strlen(sql_buff)],&p_str[i],strlen(p_str[i]));
 	}
 	sql_buff[strlen(sql_buff)] = ')';
 	qz_printf("%s\n",sql_buff);

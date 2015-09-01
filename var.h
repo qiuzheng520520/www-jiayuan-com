@@ -1,7 +1,7 @@
 #define START_NUM  10000000		//开始ID
 
 #ifdef _DEBUG_
-#define SUM_NUM 10
+#define SUM_NUM 50
 #else
 #define SUM_NUM	10000		//总数
 #endif
