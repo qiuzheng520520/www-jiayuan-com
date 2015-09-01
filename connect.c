@@ -227,22 +227,26 @@ int do_things(int rfd)
 		qz_printf("i == %d\n",i);
 		f = strstr(html_buff,req_args[i].front);
 		qz_printf("f:%d\n",f-html_buff);
-		if(f <= 0)
-		{ memcpy(p_str[i],"---",strlen(var_buf));continue; }
-		if(f == 0 && i==8)
+		if(f <= 0)	{ memcpy(p_str[i],"\'---\'",strlen(var_buf));continue; }
+		if(i < 5)
 		{
-			i+=2;
-			f = html_buff;
-			continue;
+			e = strstr(f+strlen(req_args[i].f_str),req_args[i].end);
+			p = f + strlen(req_args[i].f_str);
+			str_len = e - f - strlen(req_args[i].f_str);
 		}
-		e = strstr(f+strlen(req_args[i].f_str),req_args[i].end);
-		p = f + strlen(req_args[i].f_str);
-
-		str_len = e - f - strlen(req_args[i].f_str);
+		else
+		{
+			char *f_old; 
+			f_old = strstr(f,"em"); 
+			f=strstr(f_old,">");
+			e = strstr(f,"<");
+			p = f + 1;
+			str_len = e - p;
+		}
 		memset(var_buf,0,1024);
 		memcpy(var_buf, p, str_len);
 		var_buf[str_len] = 0;
-		
+
 		qz_printf("e==%d\n",e-html_buff);
 		qz_printf("p==%d\n",p-html_buff);
 		qz_printf("str_len==%d\n",str_len);
@@ -363,13 +367,11 @@ int main(int argc, char **argv)
 					goto write_start_no;
 				}
 				do_things(rfd);
-				printf("111111\n");
 				close(cfd);
 write_start_no:
 				sprintf(id_buff,"%d            ",start_num + i);
 				lseek(nfd,0,SEEK_SET);
 				write(nfd,id_buff,strlen(id_buff));
-				printf("22222\n");
 			}
 
 #ifdef DB_FILE
