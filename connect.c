@@ -275,6 +275,7 @@ int do_things(int rfd)
 	//for(i=0; i<num; i++)
 	//{	printf("%d:%s\n",i,p_str[i]);}
 	qz_printf("hehe\n");
+	memset(sql_buff,0,sizeof(sql_buff));
 	sprintf(sql_buff,"%s","INSERT INTO \"test_tb\" VALUES(");
 	memcpy(&sql_buff[strlen(sql_buff)],p_str,strlen(p_str));
 	//printf("%s\n",sql_buff);
