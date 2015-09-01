@@ -69,15 +69,18 @@ int create_db_file()
 
 	memset(sql, 0, 128);  
 	//sprintf(sql, "%s%s%s", "create table ",	"test_tb",	"(id INTEGER PRIMARY KEY, data TEXT)");  
-	//rt = sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
-	rt = sqlite3_exec(db, "create table test_tb(id varchar(40),name varchar(40),sex varchar(40),age varchar(40))", NULL, NULL, NULL);  
+	rt = sqlite3_exec(db, SQL_CREATE_TABLE, NULL, NULL, NULL);  
+//	rt = sqlite3_exec(db, "create table test_tb(id varchar(40),name varchar(40),sex varchar(40),age varchar(40))", NULL, NULL, NULL);  
 	qz_printf("rt==%d\n",rt);
 	return 0;
 }
 int write_db(char *sql)
 {
-	sqlite3_exec(db, sql, NULL, NULL, NULL);  
-	//sqlite3_exec(db, "insert into test_tb values('111','222','333','444')", NULL, NULL, NULL);  
+	char *p;
+
+	sqlite3_exec(db, sql, NULL, NULL, &p);  
+	printf("sqlite3_exec error:%s\n",p);
+//	sqlite3_exec(db, "insert into test_tb values('111','222','333','444')", NULL, NULL, NULL);  
 	printf("insert test_db ok!\n");
 
 	return 0;
@@ -253,7 +256,11 @@ int do_things(int rfd)
 		qz_printf("f:%d\n",f-html_buff);
 
 #ifdef DB_FILE
-		memcpy(&p_str[i],var_buf,strlen(var_buf));	
+	//	p_str[i][0] = "\"";
+	//	memcpy(&(p_str[i][1]),var_buf,strlen(var_buf));	
+	//	p_str[i][strlen(var_buf)+1] = "\"";
+		memset(&p_str[i][0],0,4*1024);
+		sprintf(&p_str[i][0],"\'%s\'",var_buf);
 #endif
 	}
 //	res_buff[strlen(res_buff)] = '\n';
@@ -273,7 +280,7 @@ int do_things(int rfd)
 		if(i == 11)
 		{
 			if((p = strstr(p_str+i,CR)) > 0)
-				*p = 0;
+			{*p='\'';*(p+1)= 0;}
 		}
 		sql_buff[strlen(sql_buff)] = ',';
 		memcpy(&sql_buff[strlen(sql_buff)],p_str+i,strlen(p_str+i));
