@@ -77,11 +77,16 @@ int create_db_file()
 int write_db(char *sql)
 {
 	char *p;
+	int rt;
 
-	sqlite3_exec(db, sql, NULL, NULL, &p);  
-	printf("sqlite3_exec error:%s\n",p);
+	rt = sqlite3_exec(db, sql, NULL, NULL, &p);  
+	if(rt != SQLITE_OK)
+	{
+		printf("sqlite3_exec error:%s\n",p);
+		exit(0);
+	}
 //	sqlite3_exec(db, "insert into test_tb values('111','222','333','444')", NULL, NULL, NULL);  
-	printf("insert test_db ok!\n");
+	//printf("insert test_db ok!\n");
 
 	return 0;
 }
@@ -269,7 +274,7 @@ int do_things(int rfd)
 	}
 //	res_buff[strlen(res_buff)] = '\n';
 //	qz_printf("%s\n",res_buff);
-	printf("ok\n");
+//	printf("ok\n");
 
 #ifdef DB_FILE
 	//for(i=0; i<num; i++)
@@ -368,6 +373,7 @@ int main(int argc, char **argv)
 					goto write_start_no;
 				}
 				do_things(rfd);
+				printf("ok\n");
 				close(cfd);
 write_start_no:
 				sprintf(id_buff,"%d            ",start_num + i);
