@@ -232,8 +232,14 @@ int do_things(int rfd)
 		qz_printf("i == %d\n",i);
 		f = strstr(html_buff,req_args[i].front);
 		qz_printf("f:%d\n",f-html_buff);
+		if(i == 3)
+		{
+			if(f>0)	{memset(&p_str[i],0,4*1024);memcpy(&p_str[i][0],"\'男\'",strlen("\'男\'"));}
+			if(f<=0){memset(&p_str[i],0,4*1024);memcpy(&p_str[i][0],"\'女\'",strlen("\'女\'"));}
+			continue;
+		}
 		if(f <= 0)	{ memset(&p_str[i],0,4*1024);memcpy(&p_str[i][0],"\'---\'",strlen("\'---\'"));continue; }
-		if(i < 5)
+		if(i < 6)
 		{
 			e = strstr(f+strlen(req_args[i].f_str),req_args[i].end);
 			p = f + strlen(req_args[i].f_str);
