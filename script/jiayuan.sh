@@ -1,14 +1,15 @@
 ﻿#!/bin/sh
 
 
-start_no=203435695
+start_no=203436725
 export LANG=en_us.utf-8
+num=$start_no
 
 main()
 {
    while true
    do
-		file_name="$start_no""_10000.txt"
+		file_name="$num""_10000.txt"
 		echo "id  |  昵称 |  省  | 市  | 年龄  |  身高  |   婚姻状况" > $file_name
 		for i in {1..10000}
 		do 
